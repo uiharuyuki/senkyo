@@ -28,8 +28,9 @@ shops.html    Shop listing page. Card list, search, genre filters.
 shop.html     Shop detail template. Reads ?id=... and renders one store.
 faq.html      Q&A page for expansion.
 stores.json   Store, product, condition, and map-query data.
-app.js        Renders shop list and shop details.
-style.css     Shared mobile-first styles. No hero image dependency.
+app.js        Renders shop list, shop details, and the home sticky-CTA visibility.
+style.css     Shared mobile-first styles. No photo dependency.
+assets/       Decorative SVGs: hero illustration and genre icons.
 ```
 
 Old proposal-deck files and temporary LP draft files were removed. Do not reintroduce the old presentation-style `index.html` / `script.js` / `index.md` pattern.
@@ -48,10 +49,12 @@ Old proposal-deck files and temporary LP draft files were removed. Do not reintr
 ## UX Rules
 
 - Mobile-first.
-- The first view should have one primary CTA: `特典を見る！`.
+- The first view should have one primary CTA: `特典を見る！`. Only the hero button uses this CTA wording.
+- Header nav links use destination labels (`対象店舗`, `使い方`, `Q&A`), never CTA wording, so the nav does not compete with the hero CTA.
+- The mobile sticky bottom CTA stays hidden while an inline `特典を見る！` button is on screen and appears only after scrolling past it (IntersectionObserver in `app.js`). It shares the primary button design; do not give duplicate CTAs different designs.
 - Do not add a secondary first-view map CTA.
 - Do not embed a map.
-- Do not depend on hero images unless the user explicitly asks for images.
+- Images are decorative SVGs in `assets/` (hero illustration, genre icons) with empty `alt`. Do not add photographic hero images or fake photos for sample stores.
 - Map links should open Google Maps search in a new tab using `target="_blank"` and `rel="noopener noreferrer"`.
 - Shop listing should be card-based.
 - Shop detail should show target products, benefit content, and conditions.

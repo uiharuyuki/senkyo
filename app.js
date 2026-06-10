@@ -5,6 +5,19 @@
   var activeGenre = "all";
   var searchTerm = "";
 
+  var genreIcons = {
+    "カフェ": "icon-cafe.svg",
+    "ベーカリー": "icon-bakery.svg",
+    "本屋": "icon-books.svg",
+    "雑貨": "icon-zakka.svg",
+    "飲食店": "icon-meal.svg",
+    "古着": "icon-clothes.svg"
+  };
+
+  function genreIconUrl(genre) {
+    return "assets/" + (genreIcons[genre] || "icon-shop.svg");
+  }
+
   function mapUrl(store) {
     var query = store.mapQuery || (store.name + " 稲毛");
     return "https://www.google.com/maps/search/?api=1&query=" + encodeURIComponent(query);
@@ -90,6 +103,7 @@
       return [
         '<article class="shop-card">',
         '  <div class="shop-card__top">',
+        '    <span class="genre-icon"><img src="' + genreIconUrl(store.genre) + '" alt="" width="26" height="26" loading="lazy"></span>',
         '    <span class="shop-card__genre">' + escapeHtml(store.genre) + "</span>",
         store.sample ? '    <span class="sample-label">サンプル</span>' : "",
         "  </div>",
@@ -159,6 +173,7 @@
     root.innerHTML = [
       '<section class="page-hero compact shop-detail-hero">',
       '  <div class="container">',
+      '    <span class="genre-icon genre-icon--lg"><img src="' + genreIconUrl(store.genre) + '" alt="" width="34" height="34"></span>',
       '    <p class="eyebrow">' + escapeHtml(store.genre) + "</p>",
       "    <h1>" + escapeHtml(store.name) + "</h1>",
       '    <p class="shop-detail-lead">' + escapeHtml(store.catch) + "</p>",
@@ -189,6 +204,33 @@
     ].join("");
   }
 
+  function initHomePage() {
+    var bottomCta = document.getElementById("bottomCta");
+    if (!bottomCta) return;
+
+    var inlineCtas = document.querySelectorAll(".hero__cta, .final-cta .button");
+    if (!inlineCtas.length || !("IntersectionObserver" in window)) {
+      bottomCta.classList.add("is-visible");
+      return;
+    }
+
+    var visibleCtas = new Set();
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          visibleCtas.add(entry.target);
+        } else {
+          visibleCtas.delete(entry.target);
+        }
+      });
+      bottomCta.classList.toggle("is-visible", visibleCtas.size === 0);
+    }, { threshold: 0.5 });
+
+    inlineCtas.forEach(function (cta) {
+      observer.observe(cta);
+    });
+  }
+
   function loadStores() {
     return fetch("stores.json")
       .then(function (response) {
@@ -203,6 +245,11 @@
   document.addEventListener("DOMContentLoaded", function () {
     var page = document.body.dataset.page;
     if (!page) return;
+
+    if (page === "home") {
+      initHomePage();
+      return;
+    }
 
     loadStores()
       .then(function () {
