@@ -2,6 +2,7 @@
   {
     "id": "hinata-cafe",
     "name": "カフェ ひなた坂",
+    "image": "assets/shop-hinata-cafe.svg",
     "sample": true,
     "genre": "カフェ",
     "area": "稲毛駅周辺",
@@ -9,16 +10,22 @@
     "catch": "投票後にひと息つける、明るい窓際のカフェ。",
     "summary": "コーヒーと焼き菓子をゆっくり楽しめる地域応援スポットです。",
     "mapQuery": "稲毛駅 カフェ",
-    "tags": ["カフェ", "ひと休み", "地域応援"],
+    "tags": [
+      "カフェ",
+      "ひと休み",
+      "地域応援"
+    ],
     "conditions": "投票済証明書の提示。対象商品は店頭で確認。",
     "products": [
       {
         "name": "ブレンドコーヒー",
+        "image": "assets/product-coffee.svg",
         "benefit": "小さなお菓子をセット",
         "condition": "店内利用時のみ"
       },
       {
         "name": "季節のソーダ",
+        "image": "assets/product-soda.svg",
         "benefit": "おすすめ焼き菓子を紹介",
         "condition": "提供内容は日替わり"
       }
@@ -27,6 +34,7 @@
   {
     "id": "mugi-bakery",
     "name": "ベーカリー 麦日和",
+    "image": "assets/shop-mugi-bakery.svg",
     "sample": true,
     "genre": "ベーカリー",
     "area": "商店街",
@@ -34,16 +42,22 @@
     "catch": "帰り道のおやつを選べる、焼きたてパンの店。",
     "summary": "地域の人が立ち寄りやすい小さなベーカリーを想定しています。",
     "mapQuery": "稲毛駅 パン屋",
-    "tags": ["パン", "テイクアウト", "地域応援"],
+    "tags": [
+      "パン",
+      "テイクアウト",
+      "地域応援"
+    ],
     "conditions": "対象商品は当日の在庫により変更。",
     "products": [
       {
         "name": "塩パン",
+        "image": "assets/product-shiopan.svg",
         "benefit": "おすすめ対象商品",
         "condition": "売り切れ次第終了"
       },
       {
         "name": "焼き菓子セット",
+        "image": "assets/product-baked-set.svg",
         "benefit": "投票後の寄り道商品として紹介",
         "condition": "店頭販売のみ"
       }
@@ -52,6 +66,7 @@
   {
     "id": "komichi-books",
     "name": "本と小径 稲毛",
+    "image": "assets/shop-komichi-books.svg",
     "sample": true,
     "genre": "本屋",
     "area": "駅北側",
@@ -59,16 +74,22 @@
     "catch": "投票後に読みたい一冊と出会う本屋。",
     "summary": "書籍、雑貨、地域の小さな展示を扱う本屋を想定しています。",
     "mapQuery": "稲毛駅 本屋",
-    "tags": ["本", "雑貨", "発見"],
+    "tags": [
+      "本",
+      "雑貨",
+      "発見"
+    ],
     "conditions": "対象商品と特典内容は店舗詳細で確認。",
     "products": [
       {
         "name": "文庫・新書",
+        "image": "assets/product-books.svg",
         "benefit": "スタッフのおすすめ棚を案内",
         "condition": "購入の有無を問わず利用可"
       },
       {
         "name": "読書雑貨",
+        "image": "assets/product-book-goods.svg",
         "benefit": "対象商品として紹介",
         "condition": "一部商品を除く"
       }
@@ -77,6 +98,7 @@
   {
     "id": "aoi-zakka",
     "name": "雑貨日々 aoi",
+    "image": "assets/shop-aoi-zakka.svg",
     "sample": true,
     "genre": "雑貨",
     "area": "商店街",
@@ -84,16 +106,22 @@
     "catch": "小さな見つけものを楽しめる雑貨店。",
     "summary": "日用品やギフトを扱う、入りやすい地域のお店を想定しています。",
     "mapQuery": "稲毛駅 雑貨屋",
-    "tags": ["雑貨", "ギフト", "まち歩き"],
+    "tags": [
+      "雑貨",
+      "ギフト",
+      "まち歩き"
+    ],
     "conditions": "特典内容は参加時に確定。",
     "products": [
       {
         "name": "ミニギフト",
+        "image": "assets/product-mini-gift.svg",
         "benefit": "対象商品として紹介",
         "condition": "在庫状況により変更"
       },
       {
         "name": "ステーショナリー",
+        "image": "assets/product-stationery.svg",
         "benefit": "地域応援アイテムとして紹介",
         "condition": "一部対象外あり"
       }
@@ -102,6 +130,7 @@
   {
     "id": "michikusa-diner",
     "name": "食堂 みちくさ台",
+    "image": "assets/shop-michikusa-diner.svg",
     "sample": true,
     "genre": "飲食店",
     "area": "駅南側",
@@ -109,16 +138,22 @@
     "catch": "投票後の昼ごはんに寄りたい食堂。",
     "summary": "地元野菜の定食や軽食を楽しめる飲食店を想定しています。",
     "mapQuery": "稲毛駅 食堂",
-    "tags": ["ごはん", "昼食", "地域応援"],
+    "tags": [
+      "ごはん",
+      "昼食",
+      "地域応援"
+    ],
     "conditions": "混雑時や品切れ時は内容変更の可能性あり。",
     "products": [
       {
         "name": "日替わり定食",
+        "image": "assets/product-teishoku.svg",
         "benefit": "対象メニューとして紹介",
         "condition": "ランチ時間帯のみ"
       },
       {
         "name": "地元野菜の小鉢",
+        "image": "assets/product-kobachi.svg",
         "benefit": "セット対象候補",
         "condition": "提供日は店舗で確認"
       }
@@ -127,6 +162,7 @@
   {
     "id": "stroll-used",
     "name": "古着と散歩 stroll",
+    "image": "assets/shop-stroll-used.svg",
     "sample": true,
     "genre": "古着",
     "area": "稲毛駅周辺",
@@ -134,16 +170,22 @@
     "catch": "帰り道に掘り出しものを探せる古着店。",
     "summary": "若者が立ち寄りやすい古着・小物の店舗を想定しています。",
     "mapQuery": "稲毛駅 古着",
-    "tags": ["古着", "ファッション", "発見"],
+    "tags": [
+      "古着",
+      "ファッション",
+      "発見"
+    ],
     "conditions": "対象商品は店頭で確認。",
     "products": [
       {
         "name": "古着トップス",
+        "image": "assets/product-tops.svg",
         "benefit": "対象商品として紹介",
         "condition": "一部商品を除く"
       },
       {
         "name": "小物・アクセサリー",
+        "image": "assets/product-accessory.svg",
         "benefit": "寄り道商品として紹介",
         "condition": "在庫状況により変更"
       }

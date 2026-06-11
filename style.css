@@ -462,6 +462,21 @@ a {
   padding: 18px;
 }
 
+.shop-card__image,
+.product-card__image,
+.detail-panel__image {
+  margin: -18px -18px 16px;
+}
+
+.shop-card__image img,
+.product-card__image img,
+.detail-panel__image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius) var(--radius) 0 0;
+  border-bottom: 1px solid var(--line);
+}
+
 .shop-card__top {
   display: flex;
   align-items: center;
