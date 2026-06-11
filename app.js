@@ -115,7 +115,7 @@
         '  <div class="tag-row">' + tags + "</div>",
         '  <div class="shop-card__actions">',
         '    <a class="button button--primary" href="shop.html?id=' + encodeURIComponent(store.id) + '">詳細を見る</a>',
-        '    <a class="button button--outline" href="' + mapUrl(store) + '" target="_blank" rel="noopener noreferrer">Googleマップで開く</a>',
+        '    <a class="button button--outline" href="' + mapUrl(store) + '" target="_blank" rel="noopener noreferrer">地図を開く</a>',
         "  </div>",
         "</article>"
       ].join("");
@@ -181,7 +181,7 @@
       '    <p class="shop-detail-lead">' + escapeHtml(store.catch) + "</p>",
       '    <div class="tag-row">' + tags + "</div>",
       '    <div class="detail-actions">',
-      '      <a class="button button--primary" href="' + mapUrl(store) + '" target="_blank" rel="noopener noreferrer">Googleマップで開く</a>',
+      '      <a class="button button--primary" href="' + mapUrl(store) + '" target="_blank" rel="noopener noreferrer">地図を開く</a>',
       '      <a class="button button--outline" href="shops.html">一覧へ戻る</a>',
       "    </div>",
       "  </div>",
