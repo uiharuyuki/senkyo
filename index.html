@@ -7,14 +7,14 @@
   <meta name="description" content="投票済証明書を受け取った方へ。稲毛の対象店舗と特典を確認できる地域応援LPです。">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-page="home">
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="いなげ地域応援スポット トップへ">
       <span class="brand__mark">稲</span>
       <span>いなげ地域応援スポット</span>
     </a>
     <nav class="site-nav" aria-label="主要ナビゲーション">
-      <a href="shops.html">特典を見る</a>
+      <a href="shops.html">対象店舗</a>
       <a href="#how-to-use">使い方</a>
       <a href="faq.html">Q&A</a>
     </nav>
@@ -22,14 +22,19 @@
 
   <main>
     <section class="hero">
-      <div class="hero__content">
-        <p class="eyebrow">投票済証明書を受け取った方へ</p>
-        <h1>投票おつかれさまでした。<br>帰り道に寄れる稲毛のお店を見つけよう。</h1>
-        <p class="hero__lead">
-          対象店舗と商品を確認して、投票後のまち歩きを少しだけ楽しむためのページです。
-        </p>
-        <a class="button button--primary hero__cta" href="shops.html">特典を見る！</a>
-        <p class="hero__note">掲載店舗・特典内容はサンプルです。本実施時は参加店舗の条件を確認して掲載します。</p>
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="eyebrow">投票済証明書を受け取った方へ</p>
+          <h1>投票おつかれさまでした。<br>帰り道に寄れる稲毛のお店を見つけよう。</h1>
+          <p class="hero__lead">
+            対象店舗と商品を確認して、投票後のまち歩きを少しだけ楽しむためのページです。
+          </p>
+          <a class="button button--primary hero__cta" href="shops.html">特典を見る！</a>
+          <p class="hero__note">掲載店舗・特典内容はサンプルです。本実施時は参加店舗の条件を確認して掲載します。</p>
+        </div>
+        <div class="hero__visual">
+          <img src="assets/hero-walk.svg" alt="" width="640" height="400" loading="eager">
+        </div>
       </div>
       <div class="hero__summary" aria-label="このサイトでできること">
         <span>対象店舗を見る</span>
@@ -102,8 +107,10 @@
     </section>
   </main>
 
-  <div class="bottom-cta" aria-label="固定CTA">
+  <div class="bottom-cta" id="bottomCta" aria-label="固定CTA">
     <a href="shops.html">特典を見る！</a>
   </div>
+
+  <script src="app.js"></script>
 </body>
 </html>
