@@ -88,10 +88,8 @@
 
     var visibleStores = stores.filter(storeMatches);
     var count = document.getElementById("resultCount");
-    var empty = document.getElementById("emptyState");
 
     if (count) count.textContent = visibleStores.length;
-    if (empty) empty.hidden = visibleStores.length !== 0;
 
     root.innerHTML = visibleStores.map(function (store) {
       var firstProduct = (store.products && store.products[0]) ? store.products[0] : null;
@@ -148,7 +146,7 @@
         '    <p class="eyebrow">Not Found</p>',
         "    <h1>店舗が見つかりません</h1>",
         "    <p>店舗一覧からもう一度選んでください。</p>",
-        '    <a class="button button--primary" href="shops.html">店舗一覧へ戻る</a>',
+        '    <a class="button button--primary" href="index.html">店舗一覧へ戻る</a>',
         "  </div>",
         "</section>"
       ].join("");
@@ -182,7 +180,7 @@
       '    <div class="tag-row">' + tags + "</div>",
       '    <div class="detail-actions">',
       '      <a class="button button--primary" href="' + mapUrl(store) + '" target="_blank" rel="noopener noreferrer">地図を開く</a>',
-      '      <a class="button button--outline" href="shops.html">一覧へ戻る</a>',
+      '      <a class="button button--outline" href="index.html">一覧へ戻る</a>',
       "    </div>",
       "  </div>",
       "</section>",
@@ -207,33 +205,6 @@
     ].join("");
   }
 
-  function initHomePage() {
-    var bottomCta = document.getElementById("bottomCta");
-    if (!bottomCta) return;
-
-    var inlineCtas = document.querySelectorAll(".hero__cta, .final-cta .button");
-    if (!inlineCtas.length || !("IntersectionObserver" in window)) {
-      bottomCta.classList.add("is-visible");
-      return;
-    }
-
-    var visibleCtas = new Set();
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          visibleCtas.add(entry.target);
-        } else {
-          visibleCtas.delete(entry.target);
-        }
-      });
-      bottomCta.classList.toggle("is-visible", visibleCtas.size === 0);
-    }, { threshold: 0.5 });
-
-    inlineCtas.forEach(function (cta) {
-      observer.observe(cta);
-    });
-  }
-
   function loadStores() {
     return fetch("stores.json")
       .then(function (response) {
@@ -249,20 +220,15 @@
     var page = document.body.dataset.page;
     if (!page) return;
 
-    if (page === "home") {
-      initHomePage();
-      return;
-    }
-
     loadStores()
       .then(function () {
         if (page === "shops") initShopsPage();
         if (page === "shop-detail") renderShopDetail();
       })
       .catch(function () {
-        var target = document.getElementById("shopList") || document.getElementById("shopDetail");
-        if (target) {
-          target.innerHTML = '<p class="empty-state">店舗データを読み込めませんでした。時間をおいて再読み込みしてください。</p>';
+        var shopDetail = document.getElementById("shopDetail");
+        if (shopDetail) {
+          shopDetail.innerHTML = '<p class="empty-state">店舗データを読み込めませんでした。時間をおいて再読み込みしてください。</p>';
         }
       });
   });

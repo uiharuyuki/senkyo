@@ -3,113 +3,58 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>いなげ地域応援スポット | 投票後のまち歩き</title>
-  <meta name="description" content="投票済証明書を受け取った方へ。稲毛の対象店舗と特典を確認できる地域応援LPです。">
+  <title>対象店舗一覧 | いなげ地域応援スポット</title>
+  <meta name="description" content="投票済証明書を受け取った方へ。稲毛の対象店舗と特典をカード一覧で確認できます。">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="home">
+<body data-page="shops">
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="いなげ地域応援スポット トップへ">
       <span class="brand__mark">稲</span>
       <span>いなげ地域応援スポット</span>
     </a>
     <nav class="site-nav" aria-label="主要ナビゲーション">
-      <a href="shops.html">対象店舗</a>
-      <a href="#how-to-use">使い方</a>
-      <a href="faq.html">Q&A</a>
+      <a href="index.html" aria-current="page">対象店舗</a>
+      <a href="how-to-use.html">使い方</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <div class="hero__inner">
-        <div class="hero__content">
-          <p class="eyebrow">投票済証明書を受け取った方へ</p>
-          <h1>投票おつかれさまでした。<br>帰り道に寄れる稲毛のお店を見つけよう。</h1>
-          <p class="hero__lead">
-            対象店舗と商品を確認して、投票後のまち歩きを少しだけ楽しむためのページです。
-          </p>
-          <a class="button button--primary hero__cta" href="shops.html">特典を見る！</a>
-          <p class="hero__note">掲載店舗・特典内容はサンプルです。本実施時は参加店舗の条件を確認して掲載します。</p>
-        </div>
-        <div class="hero__visual">
-          <img src="assets/hero-walk.svg" alt="" width="640" height="400" loading="eager">
-        </div>
-      </div>
-      <div class="hero__summary" aria-label="このサイトでできること">
-        <span>対象店舗を見る</span>
-        <span>対象商品を確認</span>
-        <span>地図は店舗から開く</span>
-      </div>
-    </section>
-
-    <section class="section intro" aria-labelledby="about-title">
+    <section class="page-hero compact">
       <div class="container">
-        <p class="eyebrow">About</p>
-        <h2 id="about-title">このサイトについて</h2>
-        <p class="section-lead">
-          投票済証明書から開く、稲毛の地域応援スポット案内です。投票後の帰り道に立ち寄れるお店や、対象商品、使い方をまとめて確認できます。
-        </p>
-        <div class="feature-list">
-          <article>
-            <span>1</span>
-            <h3>対象店舗を探す</h3>
-            <p>店舗カードから、ジャンルや特典の内容を見ながら探せます。</p>
-          </article>
-          <article>
-            <span>2</span>
-            <h3>対象商品を確認</h3>
-            <p>店舗詳細ページで、対象商品や利用条件を確認できます。</p>
-          </article>
-          <article>
-            <span>3</span>
-            <h3>地図で開く</h3>
-            <p>店舗カードのボタンからGoogleマップ検索を別タブで開けます。</p>
-          </article>
-        </div>
+        <p class="eyebrow">Shop List</p>
+        <h1>対象店舗一覧</h1>
+        <p>店舗カードから、対象商品と利用条件を確認できます。特典の利用手順はページ下部の使い方にまとめています。</p>
       </div>
     </section>
 
-    <section id="how-to-use" class="section how-to-use" aria-labelledby="how-title">
+    <section class="section shop-browser" aria-labelledby="shop-list-title">
       <div class="container">
-        <p class="eyebrow">How To Use</p>
-        <h2 id="how-title">特典の利用方法</h2>
-        <ol class="steps">
-          <li>
-            <span>Step 1</span>
-            <h3>証明書を受け取る</h3>
-            <p>投票後に受け取った投票済証明書を手元に用意します。</p>
-          </li>
-          <li>
-            <span>Step 2</span>
-            <h3>対象店舗を確認する</h3>
-            <p>「特典を見る！」から店舗一覧を開き、気になる店舗の詳細を確認します。</p>
-          </li>
-          <li>
-            <span>Step 3</span>
-            <h3>店舗で確認する</h3>
-            <p>参加店舗で条件を確認し、必要に応じて投票済証明書を提示します。</p>
-          </li>
-        </ol>
-        <p class="notice">
-          実施時は、特典内容・対象商品・利用条件・有効期限を参加店舗ごとに明記します。投票の対価ではなく、投票後の地域回遊を応援する企画として設計します。
-        </p>
-      </div>
-    </section>
+        <div class="quick-guide">
+          <p><strong>使い方は簡単です。</strong> 気になる店舗の対象商品と条件を確認し、来店時に必要に応じて投票済証明書を提示します。</p>
+          <a href="how-to-use.html">詳しい使い方を見る</a>
+        </div>
 
-    <section class="section final-cta">
-      <div class="container final-cta__inner">
-        <p class="eyebrow">Start</p>
-        <h2>まずは対象店舗を見てみよう</h2>
-        <p>カフェ、ベーカリー、本屋など、稲毛の地域応援スポットをカード一覧から探せます。</p>
-        <a class="button button--primary" href="shops.html">特典を見る！</a>
+        <div class="tool-panel" aria-label="店舗検索と絞り込み">
+          <label class="search-box">
+            <span>キーワード検索</span>
+            <input id="shopSearch" type="search" placeholder="店舗名・ジャンル・特典で検索">
+          </label>
+          <div class="filter-row" id="genreFilters" aria-label="ジャンルで絞り込み"></div>
+        </div>
+
+        <div class="list-head">
+          <div>
+            <p class="eyebrow">Benefits</p>
+            <h2 id="shop-list-title">使える特典</h2>
+          </div>
+          <p class="result-count"><span id="resultCount">0</span>件</p>
+        </div>
+
+        <div id="shopList" class="shop-grid" aria-live="polite"></div>
       </div>
     </section>
   </main>
-
-  <div class="bottom-cta" id="bottomCta" aria-label="固定CTA">
-    <a href="shops.html">特典を見る！</a>
-  </div>
 
   <script src="app.js"></script>
 </body>

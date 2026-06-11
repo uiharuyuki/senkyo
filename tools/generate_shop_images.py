@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate flat storefront illustrations for each sample store.
 
-Style matches assets/hero-walk.svg: flat shapes, site palette, no outlines
+Style matches the site palette: flat shapes, no outlines
 except soft borders. Output: assets/shop-<id>.svg (400x250).
 """
 

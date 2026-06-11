@@ -3,57 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>対象店舗一覧 | いなげ地域応援スポット</title>
-  <meta name="description" content="稲毛の対象店舗と特典をカード一覧で確認できます。">
+  <meta http-equiv="refresh" content="0; url=index.html">
+  <title>対象店舗一覧へ移動 | いなげ地域応援スポット</title>
+  <meta name="description" content="対象店舗一覧はトップページに移動しました。">
+  <link rel="canonical" href="index.html">
   <link rel="stylesheet" href="style.css">
 </head>
-<body data-page="shops">
-  <header class="site-header">
-    <a class="brand" href="index.html" aria-label="いなげ地域応援スポット トップへ">
-      <span class="brand__mark">稲</span>
-      <span>いなげ地域応援スポット</span>
-    </a>
-    <nav class="site-nav" aria-label="主要ナビゲーション">
-      <a href="shops.html" aria-current="page">対象店舗</a>
-      <a href="index.html#how-to-use">使い方</a>
-      <a href="faq.html">Q&A</a>
-    </nav>
-  </header>
-
-  <main>
-    <section class="page-hero compact">
-      <div class="container">
-        <p class="eyebrow">Shop List</p>
-        <h1>対象店舗一覧</h1>
-        <p>店舗カードから、対象商品と利用条件を確認できます。特典の利用手順は使い方ページにまとめています。</p>
-        <a class="page-hero__link" href="index.html#how-to-use">使い方を見る</a>
-      </div>
-    </section>
-
-    <section class="section shop-browser" aria-labelledby="shop-list-title">
-      <div class="container">
-        <div class="tool-panel" aria-label="店舗検索と絞り込み">
-          <label class="search-box">
-            <span>キーワード検索</span>
-            <input id="shopSearch" type="search" placeholder="店舗名・ジャンル・特典で検索">
-          </label>
-          <div class="filter-row" id="genreFilters" aria-label="ジャンルで絞り込み"></div>
-        </div>
-
-        <div class="list-head">
-          <div>
-            <p class="eyebrow">Benefits</p>
-            <h2 id="shop-list-title">使える特典</h2>
-          </div>
-          <p class="result-count"><span id="resultCount">0</span>件</p>
-        </div>
-
-        <div id="shopList" class="shop-grid" aria-live="polite"></div>
-        <p id="emptyState" class="empty-state" hidden>条件に合う店舗がありません。検索条件を変えてください。</p>
-      </div>
-    </section>
+<body>
+  <main class="section">
+    <div class="container">
+      <p class="eyebrow">Redirect</p>
+      <h1>対象店舗一覧へ移動します</h1>
+      <p class="section-lead">自動で移動しない場合は、下のボタンから対象店舗一覧を開いてください。</p>
+      <p><a class="button button--primary" href="index.html">対象店舗一覧へ</a></p>
+    </div>
   </main>
-
-  <script src="app.js"></script>
+  <script>
+    window.location.replace("index.html");
+  </script>
 </body>
 </html>
