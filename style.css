@@ -577,7 +577,10 @@ a {
 
 .shop-card__actions .button,
 .detail-actions .button {
-  flex: 1 1 150px;
+  flex: 1 1 120px;
+  min-height: 42px;
+  padding: 8px 14px;
+  font-size: 14px;
 }
 
 .empty-state {
@@ -751,7 +754,8 @@ a {
     display: none;
   }
 
-  .button {
+  .hero__cta,
+  .final-cta .button {
     width: 100%;
   }
 }
