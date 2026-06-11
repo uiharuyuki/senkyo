@@ -497,6 +497,16 @@ a {
   margin-top: 18px;
 }
 
+.more-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.more-actions .button {
+  min-width: min(100%, 220px);
+}
+
 .shop-card__actions .button,
 .detail-actions .button {
   flex: 1 1 120px;
@@ -511,6 +521,10 @@ a {
   background: var(--cream);
   color: var(--ink-soft);
   font-weight: 800;
+}
+
+.shop-grid .empty-state {
+  grid-column: 1 / -1;
 }
 
 .shop-detail-lead {
@@ -576,6 +590,7 @@ a {
 .faq-list {
   display: grid;
   gap: 12px;
+  margin-top: 22px;
 }
 
 .faq-list details {

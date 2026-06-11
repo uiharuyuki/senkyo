@@ -23,8 +23,8 @@ Core concept:
 Use the current production-oriented static structure:
 
 ```text
-index.html    QR landing page and primary shop listing. Card list, search, genre filters.
-how-to-use.html  How-to-use page with Q&A below the usage steps.
+index.html    QR landing page and primary shop listing. Card list, search, genre filters, and Q&A below the benefit list.
+how-to-use.html  How-to-use page with usage steps.
 shops.html    Compatibility redirect to index.html for old shop-list links.
 shop.html     Shop detail template. Reads ?id=... and renders one store.
 stores.json   Store, product, condition, and map-query data.
@@ -40,7 +40,7 @@ Old proposal-deck files and temporary LP draft files were removed. Do not reintr
 
 1. QR opens `index.html`
 2. User sees the target shop list
-3. User filters/searches shops or opens `how-to-use.html` as needed
+3. User filters/searches shops, checks Q&A below the shop list, or opens `how-to-use.html` as needed
 4. User selects a shop card
 5. User checks target products on `shop.html?id=...`
 6. User opens Google Maps from the shop card or detail page
@@ -58,7 +58,7 @@ Old proposal-deck files and temporary LP draft files were removed. Do not reintr
 - Shop listing should be card-based.
 - Shop detail should show target products, benefit content, and conditions.
 - Store data should live in `stores.json`; do not hard-code 50 shops into HTML.
-- Q&A lives on `how-to-use.html` below the usage steps; do not add a standalone `faq.html`.
+- Q&A lives on `index.html` below the benefit list and "もっと見る" button; do not add a standalone `faq.html`.
 
 ## Content Rules
 

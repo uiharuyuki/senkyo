@@ -4,6 +4,8 @@
   var stores = [];
   var activeGenre = "all";
   var searchTerm = "";
+  var visibleShopCount = 4;
+  var SHOP_PAGE_SIZE = 4;
 
   var genreIcons = {
     "カフェ": "icon-cafe.svg",
@@ -76,6 +78,7 @@
     root.querySelectorAll("button").forEach(function (button) {
       button.addEventListener("click", function () {
         activeGenre = button.dataset.genre;
+        visibleShopCount = SHOP_PAGE_SIZE;
         renderShopList();
         renderGenreFilters();
       });
@@ -88,10 +91,21 @@
 
     var visibleStores = stores.filter(storeMatches);
     var count = document.getElementById("resultCount");
+    var moreButton = document.getElementById("showMoreShops");
+    var renderedStores = visibleStores.slice(0, visibleShopCount);
+    var hasMoreStores = visibleStores.length > renderedStores.length;
 
     if (count) count.textContent = visibleStores.length;
+    if (moreButton) {
+      moreButton.hidden = !hasMoreStores;
+    }
 
-    root.innerHTML = visibleStores.map(function (store) {
+    if (!renderedStores.length) {
+      root.innerHTML = '<p class="empty-state">条件に合う店舗が見つかりませんでした。</p>';
+      return;
+    }
+
+    root.innerHTML = renderedStores.map(function (store) {
       var firstProduct = (store.products && store.products[0]) ? store.products[0] : null;
       var productLabel = firstProduct ? firstProduct.name + " / " + firstProduct.benefit : "対象商品は店舗詳細で確認";
       var tags = (store.tags || []).map(function (tag) {
@@ -125,9 +139,19 @@
     if (searchInput) {
       searchInput.addEventListener("input", function () {
         searchTerm = searchInput.value.trim();
+        visibleShopCount = SHOP_PAGE_SIZE;
         renderShopList();
       });
     }
+
+    var moreButton = document.getElementById("showMoreShops");
+    if (moreButton) {
+      moreButton.addEventListener("click", function () {
+        visibleShopCount += SHOP_PAGE_SIZE;
+        renderShopList();
+      });
+    }
+
     renderGenreFilters();
     renderShopList();
   }
