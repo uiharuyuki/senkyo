@@ -102,6 +102,7 @@
 
       return [
         '<article class="shop-card">',
+        store.image ? '  <figure class="shop-card__image"><img src="' + escapeHtml(store.image) + '" alt="" width="400" height="250" loading="lazy"></figure>' : "",
         '  <div class="shop-card__top">',
         '    <span class="genre-icon"><img src="' + genreIconUrl(store.genre) + '" alt="" width="26" height="26" loading="lazy"></span>',
         '    <span class="shop-card__genre">' + escapeHtml(store.genre) + "</span>",
@@ -159,6 +160,7 @@
     var productHtml = (store.products || []).map(function (product) {
       return [
         '<article class="product-card">',
+        product.image ? '  <figure class="product-card__image"><img src="' + escapeHtml(product.image) + '" alt="" width="200" height="150" loading="lazy"></figure>' : "",
         "  <h3>" + escapeHtml(product.name) + "</h3>",
         '  <p class="product-card__benefit">' + escapeHtml(product.benefit) + "</p>",
         '  <p class="product-card__condition">' + escapeHtml(product.condition) + "</p>",
@@ -187,6 +189,7 @@
       '<section class="section">',
       '  <div class="container detail-layout">',
       '    <aside class="detail-panel">',
+      store.image ? '      <figure class="detail-panel__image"><img src="' + escapeHtml(store.image) + '" alt="" width="400" height="250"></figure>' : "",
       "      <h2>店舗情報</h2>",
       "      <dl>",
       "        <div><dt>エリア</dt><dd>" + escapeHtml(store.area) + "</dd></div>",
