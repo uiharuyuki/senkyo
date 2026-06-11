@@ -3,6 +3,7 @@
     "id": "hinata-cafe",
     "name": "カフェ ひなた坂",
     "image": "assets/shop-hinata-cafe.svg",
+    "cardImage": "assets/card-cafe-photo.png",
     "sample": true,
     "genre": "カフェ",
     "area": "稲毛駅周辺",
@@ -28,6 +29,37 @@
         "image": "assets/product-soda.svg",
         "benefit": "おすすめ焼き菓子を紹介",
         "condition": "提供内容は日替わり"
+      }
+    ]
+  },
+  {
+    "id": "komorebi-ramen",
+    "name": "らぁめん 木漏れ日",
+    "image": "assets/shop-michikusa-diner.svg",
+    "cardImage": "assets/card-ramen-photo.png",
+    "sample": true,
+    "genre": "ラーメン",
+    "area": "稲毛駅周辺",
+    "distance": "稲毛駅から徒歩6分",
+    "catch": "投票後の帰り道に温かい一杯でひと息つけるラーメン店。",
+    "summary": "落ち着いたカウンターで、醤油ラーメンや軽めのサイドメニューを楽しめる店を想定しています。",
+    "mapQuery": "稲毛駅 ラーメン",
+    "tags": [
+      "ラーメン",
+      "昼食",
+      "地域応援"
+    ],
+    "conditions": "対象メニューと提供条件は店頭で確認。",
+    "products": [
+      {
+        "name": "醤油らぁめん",
+        "benefit": "対象メニューとして紹介",
+        "condition": "提供時間帯は店舗で確認"
+      },
+      {
+        "name": "味玉トッピング",
+        "benefit": "対象候補として案内",
+        "condition": "在庫状況により変更"
       }
     ]
   },
@@ -79,7 +111,7 @@
       "雑貨",
       "発見"
     ],
-    "conditions": "対象商品と特典内容は店舗詳細で確認。",
+    "conditions": "対象商品と特典内容は店舗カードで確認。",
     "products": [
       {
         "name": "文庫・新書",

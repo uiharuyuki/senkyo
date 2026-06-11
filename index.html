@@ -21,20 +21,29 @@
 
   <main>
     <section class="page-hero compact">
-      <div class="container">
-        <p class="eyebrow">Shop List</p>
-        <h1>対象店舗一覧</h1>
-        <p>店舗カードから、対象商品と利用条件を確認できます。特典の利用手順は使い方ページに、来店前のQ&Aは一覧の下にまとめています。</p>
+      <div class="container page-hero__grid">
+        <div class="page-hero__copy">
+          <p class="eyebrow">Shop List</p>
+          <h1>対象店舗一覧</h1>
+          <p>店舗カードで対象商品と利用条件を確認できます。来店前のQ&Aも一覧の下にまとめています。</p>
+        </div>
+        <figure class="page-hero__media">
+          <img src="assets/fv-shops.png" alt="" width="864" height="1821" fetchpriority="high">
+        </figure>
+        <div class="quick-guide">
+          <figure class="quick-guide__image">
+            <img src="assets/guide-flow.png" alt="" width="1774" height="887" fetchpriority="high">
+          </figure>
+          <div class="quick-guide__content">
+            <p>気になる店舗の対象商品と条件を確認し、来店時に必要に応じて投票済証明書を提示します。</p>
+            <a class="button button--primary" href="how-to-use.html">詳しい使い方を見る</a>
+          </div>
+        </div>
       </div>
     </section>
 
     <section class="section shop-browser" aria-labelledby="shop-list-title">
       <div class="container">
-        <div class="quick-guide">
-          <p><strong>使い方は簡単です。</strong> 気になる店舗の対象商品と条件を確認し、来店時に必要に応じて投票済証明書を提示します。</p>
-          <a href="how-to-use.html">詳しい使い方を見る</a>
-        </div>
-
         <div class="tool-panel" aria-label="店舗検索と絞り込み">
           <label class="search-box">
             <span>キーワード検索</span>
@@ -66,11 +75,11 @@
         <div class="faq-list">
           <details open>
             <summary>投票済証明書を忘れた場合は使えますか？</summary>
-            <p>参加店舗ごとの条件によります。実施時は、証明書提示が必要かどうかを各店舗詳細に明記します。</p>
+            <p>参加店舗ごとの条件によります。実施時は、証明書提示が必要かどうかを各店舗カードに明記します。</p>
           </details>
           <details>
             <summary>何回でも使えますか？</summary>
-            <p>利用回数は店舗や特典ごとに異なる想定です。各店舗詳細の条件を確認してください。</p>
+            <p>利用回数は店舗や特典ごとに異なる想定です。各店舗カードの条件を確認してください。</p>
           </details>
           <details>
             <summary>どの店舗で使えますか？</summary>
@@ -78,7 +87,7 @@
           </details>
           <details>
             <summary>対象商品はどこで確認できますか？</summary>
-            <p>店舗カードの「詳細を見る」から、対象商品一覧と条件を確認できます。</p>
+            <p>店舗カード内の「対象商品と特典」で、対象商品一覧と条件を確認できます。</p>
           </details>
           <details>
             <summary>有効期限はありますか？</summary>
@@ -88,6 +97,23 @@
       </div>
     </section>
   </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <div>
+        <a class="brand site-footer__brand" href="index.html" aria-label="いなげ地域応援スポット トップへ">
+          <span class="brand__mark">稲</span>
+          <span>いなげ地域応援スポット</span>
+        </a>
+        <p class="site-footer__message">投票した帰りに、稲毛を少し歩きたくなる。</p>
+      </div>
+      <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+        <a href="index.html" aria-current="page">対象店舗</a>
+        <a href="how-to-use.html">使い方</a>
+      </nav>
+      <p class="site-footer__note">特典内容や利用条件は参加店舗ごとに異なる場合があります。実施前に、投票済証明書の扱いと掲載条件を関係者確認のうえ更新します。</p>
+    </div>
+  </footer>
 
   <script src="app.js"></script>
 </body>
