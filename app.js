@@ -38,6 +38,12 @@
     });
   }
 
+  function getStoreById(id) {
+    return stores.find(function (store) {
+      return store.id === id;
+    });
+  }
+
   function storeMatches(store) {
     var haystack = [
       store.name,
@@ -139,6 +145,7 @@
         '  <p class="shop-card__meta">' + escapeHtml(store.area) + " / " + escapeHtml(store.distance) + "</p>",
         '  <div class="tag-row">' + tags + "</div>",
         '  <div class="shop-card__actions">',
+        '    <a class="button button--primary" href="shop.html?id=' + encodeURIComponent(store.id) + '">詳細を見る</a>',
         '    <a class="button button--outline" href="' + mapUrl(store) + '" target="_blank" rel="noopener noreferrer">地図を開く</a>',
         "  </div>",
         "</article>"
@@ -168,6 +175,85 @@
     renderShopList();
   }
 
+  function renderShopDetail() {
+    var root = document.getElementById("shopDetail");
+    if (!root) return;
+
+    var params = new URLSearchParams(window.location.search);
+    var store = getStoreById(params.get("id"));
+
+    if (!store) {
+      root.innerHTML = [
+        '<section class="page-hero compact">',
+        '  <div class="container">',
+        '    <p class="eyebrow">Not Found</p>',
+        "    <h1>店舗が見つかりません</h1>",
+        "    <p>店舗一覧からもう一度選んでください。</p>",
+        '    <a class="button button--primary" href="index.html">店舗一覧へ戻る</a>',
+        "  </div>",
+        "</section>"
+      ].join("");
+      return;
+    }
+
+    document.title = store.name + " | いなげ地域応援スポット";
+
+    var detailImage = store.cardImage || store.image;
+    var productHtml = (store.products || []).map(function (product) {
+      return [
+        '<article class="product-card">',
+        product.image ? '  <figure class="product-card__image"><img src="' + escapeHtml(product.image) + '" alt="" width="1536" height="1024" loading="lazy"></figure>' : "",
+        "  <h3>" + escapeHtml(product.name || "") + "</h3>",
+        '  <p class="product-card__benefit">' + escapeHtml(product.benefit || "") + "</p>",
+        product.condition ? '  <p class="product-card__condition">' + escapeHtml(product.condition) + "</p>" : "",
+        "</article>"
+      ].join("");
+    }).join("");
+
+    var tags = (store.tags || []).map(function (tag) {
+      return '<span class="tag">' + escapeHtml(tag) + "</span>";
+    }).join("");
+
+    if (!productHtml) {
+      productHtml = '<p class="empty-state">対象商品は調整中です。</p>';
+    }
+
+    root.innerHTML = [
+      '<section class="page-hero compact shop-detail-hero">',
+      '  <div class="container">',
+      '    <span class="genre-icon genre-icon--lg"><img src="' + genreIconUrl(store.genre) + '" alt="" width="34" height="34"></span>',
+      '    <p class="eyebrow">' + escapeHtml(store.genre) + "</p>",
+      "    <h1>" + escapeHtml(store.name) + "</h1>",
+      '    <p class="shop-detail-lead">' + escapeHtml(store.catch || "") + "</p>",
+      '    <div class="tag-row">' + tags + "</div>",
+      '    <div class="detail-actions">',
+      '      <a class="button button--primary" href="' + mapUrl(store) + '" target="_blank" rel="noopener noreferrer">地図を開く</a>',
+      '      <a class="button button--outline" href="index.html">一覧へ戻る</a>',
+      "    </div>",
+      "  </div>",
+      "</section>",
+      '<section class="section">',
+      '  <div class="container detail-layout">',
+      '    <aside class="detail-panel">',
+      detailImage ? '      <figure class="detail-panel__image"><img src="' + escapeHtml(detailImage) + '" alt="" width="1536" height="1024"></figure>' : "",
+      "      <h2>店舗情報</h2>",
+      store.summary ? '      <p class="detail-panel__summary">' + escapeHtml(store.summary) + "</p>" : "",
+      "      <dl>",
+      "        <div><dt>エリア</dt><dd>" + escapeHtml(store.area || "") + "</dd></div>",
+      "        <div><dt>目安</dt><dd>" + escapeHtml(store.distance || "") + "</dd></div>",
+      "        <div><dt>条件</dt><dd>" + escapeHtml(store.conditions || "") + "</dd></div>",
+      "      </dl>",
+      store.sample ? '      <p class="notice compact-notice">この店舗情報はサンプルです。</p>' : "",
+      "    </aside>",
+      '    <div class="product-area">',
+      "      <h2>対象商品</h2>",
+      '      <div class="product-grid">' + productHtml + "</div>",
+      "    </div>",
+      "  </div>",
+      "</section>"
+    ].join("");
+  }
+
   function loadStores() {
     return fetch("stores.json")
       .then(function (response) {
@@ -186,9 +272,14 @@
     loadStores()
       .then(function () {
         if (page === "shops") initShopsPage();
+        if (page === "shop-detail") renderShopDetail();
       })
       .catch(function () {
+        var shopDetail = document.getElementById("shopDetail");
         var shopList = document.getElementById("shopList");
+        if (shopDetail) {
+          shopDetail.innerHTML = '<p class="empty-state">店舗データを読み込めませんでした。時間をおいて再読み込みしてください。</p>';
+        }
         if (shopList) {
           shopList.innerHTML = '<p class="empty-state">店舗データを読み込めませんでした。時間をおいて再読み込みしてください。</p>';
         }

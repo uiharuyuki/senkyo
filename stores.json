@@ -20,13 +20,13 @@
     "products": [
       {
         "name": "ブレンドコーヒー",
-        "image": "assets/product-coffee.svg",
+        "image": "assets/product-cafe-coffee-photo.png",
         "benefit": "小さなお菓子をセット",
         "condition": "店内利用時のみ"
       },
       {
         "name": "季節のソーダ",
-        "image": "assets/product-soda.svg",
+        "image": "assets/product-cafe-soda-photo.png",
         "benefit": "おすすめ焼き菓子を紹介",
         "condition": "提供内容は日替わり"
       }
@@ -53,11 +53,13 @@
     "products": [
       {
         "name": "醤油らぁめん",
+        "image": "assets/product-ramen-shoyu-photo.png",
         "benefit": "対象メニューとして紹介",
         "condition": "提供時間帯は店舗で確認"
       },
       {
         "name": "味玉トッピング",
+        "image": "assets/product-ramen-ajitama-photo.png",
         "benefit": "対象候補として案内",
         "condition": "在庫状況により変更"
       }

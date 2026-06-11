@@ -25,23 +25,24 @@ Use the current production-oriented static structure:
 ```text
 index.html    QR landing page and primary shop listing. Fast-view image, card list, search, genre filters, inline product/condition details, and Q&A below the benefit list.
 how-to-use.html  How-to-use page with fast-view image and usage steps.
+shop.html     Shop detail template. Reads ?id=... and renders one store with product images.
 stores.json   Store, product, condition, and map-query data.
-app.js        Renders shop list.
+app.js        Renders shop list and shop details.
 style.css     Shared mobile-first styles. Uses generated illustration/photo-style assets.
 assets/       Generated PNG fast-view/guide illustrations, generated product-focused card photos, plus SVG genre icons, storefronts, and product illustrations.
 tools/        Python generators for the storefront/product SVGs (not served).
 ```
 
 Old proposal-deck files and temporary LP draft files were removed. Do not reintroduce the old presentation-style `index.html` / `script.js` / `index.md` pattern.
-Only `index.html` and `how-to-use.html` are served HTML pages. Do not reintroduce `shops.html` or `shop.html` unless explicitly requested.
+Do not reintroduce `shops.html` unless explicitly requested.
 
 ## User Flow
 
 1. QR opens `index.html`
 2. User sees the target shop list
 3. User filters/searches shops, checks Q&A below the shop list, or opens `how-to-use.html` as needed
-4. User checks target products, benefit content, and conditions directly on a shop card
-5. User opens Google Maps from the shop card
+4. User checks target products, benefit content, and conditions on a shop card or opens `shop.html?id=...`
+5. User opens Google Maps from the shop card or detail page
 6. User visits the shop
 
 ## UX Rules
@@ -55,7 +56,7 @@ Only `index.html` and `how-to-use.html` are served HTML pages. Do not reintroduc
 - Map links should open Google Maps search in a new tab using `target="_blank"` and `rel="noopener noreferrer"`.
 - Shop listing should be card-based.
 - Shop cards should show target products, benefit content, and conditions.
-- Do not add a standalone shop detail page unless explicitly requested.
+- Shop detail should show target products with product images, benefit content, and conditions.
 - Store data should live in `stores.json`; do not hard-code 50 shops into HTML.
 - Q&A lives on `index.html` below the benefit list and "もっと見る" button; do not add a standalone `faq.html`.
 
