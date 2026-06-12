@@ -23,10 +23,10 @@ Core concept:
 Use the current production-oriented static structure:
 
 ```text
-index.html    QR landing page and primary shop listing. Fast-view image, compact card list, search, genre filters, and Q&A below the benefit list.
+index.html    QR landing page and primary shop listing. Fast-view image, compact card list, search, genre filters, optional current-location sorting, and Q&A below the benefit list.
 how-to-use.html  How-to-use page with fast-view image and usage steps.
 shop.html     Shop detail template. Reads ?id=... and renders one store with product images.
-stores.json   Store, product, condition, and map-query data.
+stores.json   Store, product, condition, map-query, and optional location data.
 app.js        Renders shop list and shop details.
 style.css     Shared mobile-first styles. Uses generated illustration/photo-style assets.
 assets/       Generated PNG fast-view/guide illustrations, generated product-focused card photos, plus SVG genre icons, storefronts, and product illustrations.
@@ -40,7 +40,7 @@ Do not reintroduce `shops.html` unless explicitly requested.
 
 1. QR opens `index.html`
 2. User sees the target shop list
-3. User filters/searches shops, checks Q&A below the shop list, or opens `how-to-use.html` as needed
+3. User filters/searches shops, optionally sorts by current location, checks Q&A below the shop list, or opens `how-to-use.html` as needed
 4. User opens `shop.html?id=...` to check target products, benefit content, and conditions
 5. User opens Google Maps from the shop card or detail page
 6. User visits the shop
@@ -56,6 +56,7 @@ Do not reintroduce `shops.html` unless explicitly requested.
 - Map links should open Google Maps search in a new tab using `target="_blank"` and `rel="noopener noreferrer"`.
 - Shop listing should be card-based.
 - Shop cards should prioritize fast scanning and not show target products, benefit content, or conditions.
+- Current location permission must be requested only after the user explicitly presses the location-sort button; never request it on page load.
 - Shop detail should show target products with product images, benefit content, and conditions.
 - Store data should live in `stores.json`; do not hard-code 50 shops into HTML.
 - Q&A lives on `index.html` below the benefit list and "もっと見る" button; do not add a standalone `faq.html`.

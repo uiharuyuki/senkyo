@@ -46,10 +46,21 @@
       <div class="container">
         <div class="tool-panel" aria-label="店舗検索と絞り込み">
           <label class="search-box">
-            <span>キーワード検索</span>
+            <span class="visually-hidden">キーワード検索</span>
             <input id="shopSearch" type="search" placeholder="店舗名・ジャンル・特典で検索">
           </label>
           <div class="filter-row" id="genreFilters" aria-label="ジャンルで絞り込み"></div>
+        </div>
+
+        <div class="location-panel" id="locationSortPanel">
+          <div class="location-panel__copy">
+            <p class="location-panel__title">現在地から近い対象店舗を探せます</p>
+            <p id="locationSortStatus" aria-live="polite">位置情報を許可すると、近い店舗から順に並び替えます。</p>
+          </div>
+          <div class="location-panel__actions">
+            <button id="useCurrentLocation" class="button button--primary" type="button">現在地で近い順にする</button>
+            <button id="dismissLocationSort" class="button button--outline" type="button">今は使わない</button>
+          </div>
         </div>
 
         <div class="list-head">
