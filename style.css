@@ -442,10 +442,9 @@ body[data-page="shops"] .page-hero__media img {
 }
 
 .shop-card {
-  padding: 18px;
+  padding: 14px;
 }
 
-.shop-card__image,
 .product-card__image,
 .detail-panel__image {
   margin: -18px -18px 16px;
@@ -453,7 +452,6 @@ body[data-page="shops"] .page-hero__media img {
   background: #f5f9fc;
 }
 
-.shop-card__image img,
 .product-card__image img,
 .detail-panel__image img {
   width: 100%;
@@ -488,6 +486,17 @@ body[data-page="shops"] .page-hero__media img {
 .genre-icon img {
   width: 26px;
   height: 26px;
+}
+
+.shop-card .genre-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 11px;
+}
+
+.shop-card .genre-icon img {
+  width: 22px;
+  height: 22px;
 }
 
 .genre-icon--lg {
@@ -533,78 +542,26 @@ body[data-page="shops"] .page-hero__media img {
   color: #2f7048;
 }
 
-.shop-card__catch {
-  margin: 10px 0 0;
-  color: var(--ink);
-  font-weight: 800;
-}
-
-.shop-card__products,
-.shop-card__conditions,
 .shop-card__meta {
-  margin: 10px 0 0;
+  margin: 8px 0 0;
   color: var(--ink-soft);
   font-size: 14px;
   font-weight: 700;
 }
 
-.shop-card__products {
-  padding: 12px;
-  border-radius: var(--radius);
-  background: #f5f9fc;
-}
-
-.shop-card__label {
-  margin: 0 0 8px;
-  color: var(--blue-deep);
-  font-size: 13px;
-  font-weight: 900;
-}
-
-.shop-card__products ul {
-  display: grid;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.shop-card__products li {
-  display: grid;
-  gap: 2px;
-}
-
-.shop-card__products strong {
-  color: var(--ink);
-  font-size: 15px;
-}
-
-.shop-card__products small {
-  color: var(--muted);
-  font-size: 12px;
-  font-weight: 700;
-}
-
-.shop-card__conditions {
-  display: grid;
-  gap: 4px;
-  padding: 10px 12px;
-  border-left: 4px solid var(--green);
-  border-radius: var(--radius);
-  background: var(--mint);
-}
-
-.shop-card__conditions strong {
-  color: var(--green);
-  font-size: 13px;
-  font-weight: 900;
+.shop-card h3 {
+  margin-top: 10px;
+  font-size: 18px;
 }
 
 .tag-row {
   margin-top: 14px;
 }
 
-.shop-card__actions,
+.shop-card__actions {
+  margin-top: 14px;
+}
+
 .detail-actions {
   margin-top: 18px;
 }

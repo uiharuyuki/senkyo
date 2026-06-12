@@ -108,42 +108,15 @@
     }
 
     root.innerHTML = renderedStores.map(function (store) {
-      var cardImage = store.cardImage || store.image;
-      var productHtml = (store.products || []).map(function (product) {
-        return [
-          "<li>",
-          "  <strong>" + escapeHtml(product.name || "") + "</strong>",
-          "  <span>" + escapeHtml(product.benefit || "") + "</span>",
-          product.condition ? "  <small>" + escapeHtml(product.condition) + "</small>" : "",
-          "</li>"
-        ].join("");
-      }).join("");
-      var tags = (store.tags || []).map(function (tag) {
-        return '<span class="tag">' + escapeHtml(tag) + "</span>";
-      }).join("");
-      var condition = store.conditions || "利用条件は店舗で確認してください。";
-
-      if (!productHtml) {
-        productHtml = "<li><span>対象商品は調整中です。</span></li>";
-      }
-
       return [
         '<article class="shop-card">',
-        cardImage ? '  <figure class="shop-card__image"><img src="' + escapeHtml(cardImage) + '" alt="" width="1536" height="1024" loading="lazy"></figure>' : "",
         '  <div class="shop-card__top">',
         '    <span class="genre-icon"><img src="' + genreIconUrl(store.genre) + '" alt="" width="26" height="26" loading="lazy"></span>',
         '    <span class="shop-card__genre">' + escapeHtml(store.genre) + "</span>",
         store.sample ? '    <span class="sample-label">サンプル</span>' : "",
         "  </div>",
         "  <h3>" + escapeHtml(store.name) + "</h3>",
-        '  <p class="shop-card__catch">' + escapeHtml(store.catch) + "</p>",
-        '  <div class="shop-card__products">',
-        '    <p class="shop-card__label">対象商品と特典</p>',
-        "    <ul>" + productHtml + "</ul>",
-        "  </div>",
-        '  <p class="shop-card__conditions"><strong>利用条件</strong><span>' + escapeHtml(condition) + "</span></p>",
         '  <p class="shop-card__meta">' + escapeHtml(store.area) + " / " + escapeHtml(store.distance) + "</p>",
-        '  <div class="tag-row">' + tags + "</div>",
         '  <div class="shop-card__actions">',
         '    <a class="button button--primary" href="shop.html?id=' + encodeURIComponent(store.id) + '">詳細を見る</a>',
         '    <a class="button button--outline" href="' + mapUrl(store) + '" target="_blank" rel="noopener noreferrer">地図を開く</a>',
