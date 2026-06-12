@@ -10,6 +10,7 @@
   var userLocation = null;
   var locationSortActive = false;
   var locationSortAvailable = true;
+  var shopCarouselTimers = [];
 
   var genreIcons = {
     "カフェ": "icon-cafe.svg",
@@ -99,6 +100,24 @@
     });
   }
 
+  function getShopGalleryImages(store) {
+    var images = [];
+    var seen = {};
+
+    function addImage(src) {
+      if (!src || seen[src]) return;
+      seen[src] = true;
+      images.push(src);
+    }
+
+    (store.galleryImages || []).forEach(addImage);
+    (store.products || []).forEach(function (product) {
+      addImage(product.image);
+    });
+
+    return images;
+  }
+
   function storeMatches(store) {
     var haystack = [
       store.name,
@@ -146,6 +165,8 @@
     var root = document.getElementById("shopList");
     if (!root) return;
 
+    clearShopCarouselTimers();
+
     var visibleStores = sortStoresForDisplay(stores.filter(storeMatches));
     var count = document.getElementById("resultCount");
     var moreButton = document.getElementById("showMoreShops");
@@ -165,10 +186,27 @@
     root.innerHTML = renderedStores.map(function (store) {
       var currentDistance = locationSortActive ? formatCurrentDistance(getStoreDistanceKm(store)) : "";
       var meta = escapeHtml(store.area) + " / " + escapeHtml(store.distance);
+      var galleryImages = getShopGalleryImages(store);
+      var galleryHtml = galleryImages.map(function (image, index) {
+        return [
+          '<figure class="shop-card__gallery-slide" data-carousel-slide>',
+          '  <img src="' + escapeHtml(image) + '" alt="" width="768" height="768" loading="' + (index === 0 ? "eager" : "lazy") + '">',
+          "</figure>"
+        ].join("");
+      }).join("");
+      var galleryDots = galleryImages.map(function (_, index) {
+        return '<span class="shop-card__gallery-dot' + (index === 0 ? " is-active" : "") + '"></span>';
+      }).join("");
       if (currentDistance) meta += " / " + escapeHtml(currentDistance);
 
       return [
         '<article class="shop-card">',
+        galleryHtml ? [
+          '  <div class="shop-card__gallery" data-shop-carousel aria-label="対象商品の画像">',
+          '    <div class="shop-card__gallery-track">' + galleryHtml + "</div>",
+          galleryImages.length > 1 ? '    <div class="shop-card__gallery-dots" aria-hidden="true">' + galleryDots + "</div>" : "",
+          "  </div>"
+        ].join("") : "",
         '  <div class="shop-card__top">',
         '    <span class="genre-icon"><img src="' + genreIconUrl(store.genre) + '" alt="" width="26" height="26" loading="lazy"></span>',
         '    <span class="shop-card__genre">' + escapeHtml(store.genre) + "</span>",
@@ -186,6 +224,64 @@
         "</article>"
       ].join("");
     }).join("");
+
+    initShopCarousels(root);
+  }
+
+  function clearShopCarouselTimers() {
+    shopCarouselTimers.forEach(function (timer) {
+      window.clearInterval(timer);
+    });
+    shopCarouselTimers = [];
+  }
+
+  function initShopCarousels(root) {
+    var reduceMotion = window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    root.querySelectorAll("[data-shop-carousel]").forEach(function (carousel) {
+      var track = carousel.querySelector(".shop-card__gallery-track");
+      var slides = Array.from(carousel.querySelectorAll("[data-carousel-slide]"));
+      var dots = Array.from(carousel.querySelectorAll(".shop-card__gallery-dot"));
+      if (!track || slides.length < 2) return;
+
+      var activeIndex = 0;
+
+      function updateDots(index) {
+        dots.forEach(function (dot, dotIndex) {
+          dot.classList.toggle("is-active", dotIndex === index);
+        });
+      }
+
+      function scrollToSlide(index, behavior) {
+        activeIndex = index;
+        track.scrollTo({
+          left: slides[index].offsetLeft,
+          behavior: behavior || "smooth"
+        });
+        updateDots(index);
+      }
+
+      track.addEventListener("scroll", function () {
+        var nearestIndex = slides.reduce(function (nearest, slide, index) {
+          var currentDistance = Math.abs(slide.offsetLeft - track.scrollLeft);
+          var nearestDistance = Math.abs(slides[nearest].offsetLeft - track.scrollLeft);
+          return currentDistance < nearestDistance ? index : nearest;
+        }, activeIndex);
+
+        if (nearestIndex !== activeIndex) {
+          activeIndex = nearestIndex;
+          updateDots(activeIndex);
+        }
+      }, { passive: true });
+
+      if (reduceMotion) return;
+
+      shopCarouselTimers.push(window.setInterval(function () {
+        if (document.hidden) return;
+        scrollToSlide((activeIndex + 1) % slides.length);
+      }, 3600));
+    });
   }
 
   function setLocationStatus(message) {

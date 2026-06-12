@@ -15,6 +15,11 @@
     "catch": "投票後にひと息つける、明るい窓際のカフェ。",
     "summary": "コーヒーと焼き菓子をゆっくり楽しめる地域応援スポットです。",
     "mapQuery": "稲毛駅 カフェ",
+    "galleryImages": [
+      "assets/card-cafe-photo.png",
+      "assets/product-cafe-coffee-photo.png",
+      "assets/product-cafe-soda-photo.png"
+    ],
     "tags": [
       "カフェ",
       "ひと休み",
@@ -52,6 +57,11 @@
     "catch": "投票後の帰り道に温かい一杯でひと息つけるラーメン店。",
     "summary": "落ち着いたカウンターで、醤油ラーメンや軽めのサイドメニューを楽しめる店を想定しています。",
     "mapQuery": "稲毛駅 ラーメン",
+    "galleryImages": [
+      "assets/card-ramen-photo.png",
+      "assets/product-ramen-shoyu-photo.png",
+      "assets/product-ramen-ajitama-photo.png"
+    ],
     "tags": [
       "ラーメン",
       "昼食",
@@ -88,6 +98,11 @@
     "catch": "帰り道のおやつを選べる、焼きたてパンの店。",
     "summary": "地域の人が立ち寄りやすい小さなベーカリーを想定しています。",
     "mapQuery": "稲毛駅 パン屋",
+    "galleryImages": [
+      "assets/card-bakery-gallery.png",
+      "assets/product-shiopan.svg",
+      "assets/product-baked-set.svg"
+    ],
     "tags": [
       "パン",
       "テイクアウト",
@@ -124,6 +139,11 @@
     "catch": "投票後に読みたい一冊と出会う本屋。",
     "summary": "書籍、雑貨、地域の小さな展示を扱う本屋を想定しています。",
     "mapQuery": "稲毛駅 本屋",
+    "galleryImages": [
+      "assets/card-books-gallery.png",
+      "assets/product-books.svg",
+      "assets/product-book-goods.svg"
+    ],
     "tags": [
       "本",
       "雑貨",
@@ -160,6 +180,11 @@
     "catch": "小さな見つけものを楽しめる雑貨店。",
     "summary": "日用品やギフトを扱う、入りやすい地域のお店を想定しています。",
     "mapQuery": "稲毛駅 雑貨屋",
+    "galleryImages": [
+      "assets/card-zakka-gallery.png",
+      "assets/product-mini-gift.svg",
+      "assets/product-stationery.svg"
+    ],
     "tags": [
       "雑貨",
       "ギフト",
@@ -196,6 +221,11 @@
     "catch": "投票後の昼ごはんに寄りたい食堂。",
     "summary": "地元野菜の定食や軽食を楽しめる飲食店を想定しています。",
     "mapQuery": "稲毛駅 食堂",
+    "galleryImages": [
+      "assets/card-diner-gallery.png",
+      "assets/product-teishoku.svg",
+      "assets/product-kobachi.svg"
+    ],
     "tags": [
       "ごはん",
       "昼食",
@@ -232,6 +262,11 @@
     "catch": "帰り道に掘り出しものを探せる古着店。",
     "summary": "若者が立ち寄りやすい古着・小物の店舗を想定しています。",
     "mapQuery": "稲毛駅 古着",
+    "galleryImages": [
+      "assets/card-used-gallery.png",
+      "assets/product-tops.svg",
+      "assets/product-accessory.svg"
+    ],
     "tags": [
       "古着",
       "ファッション",
