@@ -549,6 +549,28 @@ body[data-page="shops"] .page-hero__media img {
   font-weight: 700;
 }
 
+.shop-card__map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 8px;
+  color: var(--blue-deep);
+  font-size: 14px;
+  font-weight: 900;
+  line-height: 1.3;
+  text-decoration: none;
+}
+
+.shop-card__map-link img {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.shop-card__map-link:hover {
+  text-decoration: underline;
+}
+
 .shop-card h3 {
   margin-top: 10px;
   font-size: 18px;

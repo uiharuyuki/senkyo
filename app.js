@@ -117,9 +117,12 @@
         "  </div>",
         "  <h3>" + escapeHtml(store.name) + "</h3>",
         '  <p class="shop-card__meta">' + escapeHtml(store.area) + " / " + escapeHtml(store.distance) + "</p>",
+        '  <a class="shop-card__map-link" href="' + mapUrl(store) + '" target="_blank" rel="noopener noreferrer">',
+        '    <img src="assets/icon-map-pin.svg" alt="" width="16" height="16" loading="lazy">',
+        "    <span>Googleマップ</span>",
+        "  </a>",
         '  <div class="shop-card__actions">',
         '    <a class="button button--primary" href="shop.html?id=' + encodeURIComponent(store.id) + '">詳細を見る</a>',
-        '    <a class="button button--outline" href="' + mapUrl(store) + '" target="_blank" rel="noopener noreferrer">地図を開く</a>',
         "  </div>",
         "</article>"
       ].join("");
