@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="証明書の利用方法">
+  <title>証明書の利用方法</title>
+  <circle cx="40" cy="40" r="36" fill="#FFEFD1"/>
+  <path d="M 24 20 L 50 20 L 60 30 L 60 60 Q 60 62 58 62 L 26 62 Q 24 62 24 60 Z" fill="#FFFFFF" stroke="#F5A623" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M 50 20 L 50 30 L 60 30 Z" fill="#FFE7B8" stroke="#F5A623" stroke-width="2.4" stroke-linejoin="round"/>
+  <line x1="30" y1="38" x2="52" y2="38" stroke="#C96C00" stroke-width="2" stroke-linecap="round"/>
+  <line x1="30" y1="44" x2="48" y2="44" stroke="#C96C00" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="52" cy="55" r="6.5" fill="#F5A623"/>
+  <path d="M 49 55 L 51.5 57.5 L 55.5 53" stroke="#FFFFFF" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

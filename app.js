@@ -299,14 +299,41 @@
     useButton.disabled = locationSortActive || !locationSortAvailable;
     useButton.textContent = locationSortActive ? "近い順で表示中" : "現在地で近い順にする";
     dismissButton.textContent = locationSortActive ? "通常順に戻す" : "今は使わない";
+    updateLocationChipLabel();
   }
 
-  function hideLocationPanel() {
-    var panel = document.getElementById("locationSortPanel");
-    if (panel) panel.hidden = true;
+  function updateLocationChipLabel() {
+    var label = document.getElementById("locationSortChipLabel");
+    if (!label) return;
+    if (!locationSortAvailable) {
+      label.textContent = "通常順で表示中";
+    } else if (locationSortActive) {
+      label.textContent = "近い順で表示中";
+    } else {
+      label.textContent = "位置情報を使う";
+    }
+  }
 
+  function collapseLocationPanel() {
+    var panel = document.getElementById("locationSortPanel");
+    var chip = document.getElementById("locationSortChip");
+    if (!panel || !chip) return;
+    panel.classList.add("is-compact");
+    chip.hidden = false;
+    updateLocationChipLabel();
     if (storageAvailable()) {
       window.sessionStorage.setItem(LOCATION_DISMISS_KEY, "1");
+    }
+  }
+
+  function expandLocationPanel() {
+    var panel = document.getElementById("locationSortPanel");
+    var chip = document.getElementById("locationSortChip");
+    if (!panel || !chip) return;
+    panel.classList.remove("is-compact");
+    chip.hidden = true;
+    if (storageAvailable()) {
+      window.sessionStorage.removeItem(LOCATION_DISMISS_KEY);
     }
   }
 
@@ -314,12 +341,8 @@
     var panel = document.getElementById("locationSortPanel");
     var useButton = document.getElementById("useCurrentLocation");
     var dismissButton = document.getElementById("dismissLocationSort");
+    var chip = document.getElementById("locationSortChip");
     if (!panel || !useButton || !dismissButton) return;
-
-    if (storageAvailable() && window.sessionStorage.getItem(LOCATION_DISMISS_KEY) === "1") {
-      panel.hidden = true;
-      return;
-    }
 
     if (!("geolocation" in navigator)) {
       locationSortAvailable = false;
@@ -342,6 +365,7 @@
         setLocationStatus("近い対象店舗から順に表示しています。");
         updateLocationPanel();
         renderShopList();
+        collapseLocationPanel();
       }, function () {
         useButton.disabled = false;
         locationSortActive = false;
@@ -362,11 +386,17 @@
         setLocationStatus("通常順で表示しています。位置情報を使う場合はもう一度選択できます。");
         updateLocationPanel();
         renderShopList();
-        return;
       }
-
-      hideLocationPanel();
+      collapseLocationPanel();
     });
+
+    if (chip) {
+      chip.addEventListener("click", expandLocationPanel);
+    }
+
+    if (storageAvailable() && window.sessionStorage.getItem(LOCATION_DISMISS_KEY) === "1") {
+      collapseLocationPanel();
+    }
 
     updateLocationPanel();
   }
@@ -391,6 +421,13 @@
 
     renderGenreFilters();
     initLocationSort();
+
+    document.querySelectorAll('[data-action="expand-location"]').forEach(function (el) {
+      el.addEventListener("click", function () {
+        expandLocationPanel();
+      });
+    });
+
     renderShopList();
   }
 

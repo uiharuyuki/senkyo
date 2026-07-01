@@ -48,7 +48,7 @@ Do not reintroduce `shops.html` unless explicitly requested.
 ## UX Rules
 
 - Mobile-first.
-- The top page starts from the target shop list; do not add a separate hero/FV section or pre-list intro unless explicitly requested.
+- The top page starts with a hero section thanking voters (eyebrow「稲毛区での」+ h1「投票お疲れさまでした！」), followed by a 3-icon quick navigation row (証明書の利用方法 / 対象店舗を探す / 近くから探す), and then the target shop list. Hero decorations include the Chiba monorail illustration, cityscape silhouette, clouds, and celebration tags (投票済証明書 banner / coupon ticket / smartphone with check).
 - Header nav links use destination labels (`対象店舗`, `使い方`) and stay compact.
 - Do not add a top-page map CTA.
 - Do not embed a map.

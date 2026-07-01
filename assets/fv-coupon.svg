@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 90" role="img" aria-label="クーポン">
+  <title>クーポン</title>
+  <path d="
+    M 14 22
+    Q 14 14 22 14
+    L 178 14
+    Q 186 14 186 22
+    L 186 34
+    Q 176 36 176 45
+    Q 176 54 186 56
+    L 186 68
+    Q 186 76 178 76
+    L 22 76
+    Q 14 76 14 68
+    L 14 56
+    Q 24 54 24 45
+    Q 24 36 14 34
+    Z
+  " fill="#F5A623"/>
+  <path d="M 100 26 L 100 30 M 100 34 L 100 38 M 100 42 L 100 46 M 100 50 L 100 54 M 100 58 L 100 62" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+  <g font-family="'Zen Maru Gothic',sans-serif" font-weight="900">
+    <text x="58" y="52" font-size="20" fill="#FFFFFF" text-anchor="middle">クーポン</text>
+  </g>
+  <circle cx="145" cy="45" r="14" fill="#FFFFFF"/>
+  <text x="145" y="52" font-family="'Zen Maru Gothic',sans-serif" font-size="18" font-weight="900" fill="#E08300" text-anchor="middle">%</text>
+</svg>

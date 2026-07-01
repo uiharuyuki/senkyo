@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" role="img" aria-label="千葉都市モノレール">
+  <title>千葉都市モノレール</title>
+  <defs>
+    <linearGradient id="fvMonoBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#DFE4EC"/>
+      <stop offset="1" stop-color="#8E96A2"/>
+    </linearGradient>
+    <linearGradient id="fvMonoBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A96D9"/>
+      <stop offset="1" stop-color="#005E9C"/>
+    </linearGradient>
+    <linearGradient id="fvMonoWindow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#C7E4F5"/>
+      <stop offset="1" stop-color="#7EB7DA"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Guideway beam (suspended-type track above the train) -->
+  <rect x="0" y="6" width="520" height="24" rx="5" fill="url(#fvMonoBeam)"/>
+  <rect x="0" y="26" width="520" height="4" fill="#5D6572"/>
+  <rect x="10" y="12" width="500" height="2" fill="#FFFFFF" opacity="0.55"/>
+
+  <!-- Bogie / truck boxes connecting beam to car body -->
+  <rect x="60" y="30" width="70" height="18" rx="2" fill="#4A525E"/>
+  <rect x="240" y="30" width="70" height="18" rx="2" fill="#4A525E"/>
+  <rect x="390" y="30" width="60" height="18" rx="2" fill="#4A525E"/>
+
+  <!-- Car body: rounded rectangle with pronounced nose on the right -->
+  <path d="
+    M 32 60
+    Q 32 50 42 50
+    L 425 50
+    Q 490 50 490 108
+    Q 490 168 425 168
+    L 42 168
+    Q 32 168 32 158
+    Z
+  " fill="url(#fvMonoBody)"/>
+
+  <!-- Windows band -->
+  <rect x="48" y="72" width="410" height="34" rx="5" fill="url(#fvMonoWindow)"/>
+
+  <!-- Window dividers -->
+  <rect x="126" y="72" width="4" height="34" fill="#004E82"/>
+  <rect x="200" y="72" width="4" height="34" fill="#004E82"/>
+  <rect x="274" y="72" width="4" height="34" fill="#004E82"/>
+  <rect x="348" y="72" width="4" height="34" fill="#004E82"/>
+  <rect x="422" y="72" width="4" height="34" fill="#004E82"/>
+
+  <!-- Doors (dark blue vertical strips) -->
+  <rect x="76" y="64" width="16" height="98" fill="#003C66"/>
+  <rect x="228" y="64" width="16" height="98" fill="#003C66"/>
+  <rect x="380" y="64" width="16" height="98" fill="#003C66"/>
+
+  <!-- White accent stripe below windows -->
+  <rect x="32" y="108" width="458" height="5" fill="#FFFFFF"/>
+
+  <!-- Chiba orange stripe (mono-rail livery accent) -->
+  <rect x="32" y="115" width="458" height="3" fill="#F5A623"/>
+
+  <!-- Nose windshield -->
+  <path d="M 448 72 Q 480 72 486 100 L 486 116 L 448 116 Z" fill="url(#fvMonoWindow)"/>
+  <path d="M 448 116 L 486 116 L 486 128 Q 480 152 448 152 Z" fill="url(#fvMonoWindow)"/>
+  <rect x="446" y="114" width="42" height="4" fill="#003C66"/>
+
+  <!-- Headlight -->
+  <circle cx="480" cy="138" r="5" fill="#FFF3B0"/>
+  <circle cx="480" cy="138" r="2.5" fill="#FFD34A"/>
+
+  <!-- Bottom shadow line under car -->
+  <path d="M 38 162 Q 260 172 480 158" fill="none" stroke="#003C66" stroke-width="2" opacity="0.35"/>
+</svg>

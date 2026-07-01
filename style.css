@@ -853,8 +853,9 @@ body[data-page="shops"] .page-hero__media img {
 
 .site-footer {
   padding: 34px 18px 28px;
-  border-top: 1px solid var(--line);
-  background: #FFF7DB;
+  border-top: 0;
+  background: linear-gradient(135deg, #F5A623 0%, #E08300 100%);
+  color: #FFFFFF;
 }
 
 .site-footer__inner {
@@ -863,14 +864,14 @@ body[data-page="shops"] .page-hero__media img {
 }
 
 .site-footer__brand {
-  color: var(--blue-deep);
+  color: #FFFFFF;
   white-space: normal;
 }
 
 .site-footer__message {
   max-width: 520px;
   margin: 14px 0 0;
-  color: var(--ink);
+  color: #FFFFFF;
   font-size: 17px;
   font-weight: 900;
 }
@@ -879,19 +880,27 @@ body[data-page="shops"] .page-hero__media img {
   display: flex;
   flex-wrap: wrap;
   gap: 14px;
-  color: var(--blue-deep);
+  color: #FFFFFF;
   font-size: 14px;
   font-weight: 900;
 }
 
 .site-footer__nav a {
-  text-decoration: underline;
-  text-underline-offset: 4px;
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 6px 4px;
+  border-bottom: 2px solid transparent;
+  transition: border-color .15s ease;
+}
+
+.site-footer__nav a:hover,
+.site-footer__nav a:focus-visible {
+  border-bottom-color: #FFFFFF;
 }
 
 .site-footer__note {
   margin: 0;
-  color: var(--ink-soft);
+  color: rgba(255, 255, 255, .88);
   font-size: 13px;
   font-weight: 700;
 }
@@ -1072,7 +1081,6 @@ body[data-page="shops"] .page-hero__media img {
 }
 
 /* Cards get a chunkier warm border + folded-corner tag */
-.shop-card,
 .product-card,
 .steps li,
 .detail-panel,
@@ -1080,6 +1088,14 @@ body[data-page="shops"] .page-hero__media img {
   border: 2px solid #F0DDB8;
   border-radius: 18px;
   box-shadow: 0 10px 28px rgba(224, 131, 0, .1);
+}
+
+/* Shop card: mock-style thick orange frame */
+.shop-card {
+  border: 5px solid #F5A623;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(224, 131, 0, .14);
+  background: #FFFFFF;
 }
 
 .product-card {
@@ -1256,14 +1272,19 @@ body[data-page="shops"] .page-hero__media img {
   color: #C96C00;
 }
 
-/* Footer: dashed warm top border */
+/* Footer overrides — deep orange */
 .site-footer {
-  border-top: 2px dashed #F0DDB8;
+  border-top: 0;
 }
 
 .site-footer__brand,
-.site-footer__nav {
-  color: #C96C00;
+.site-footer__nav,
+.site-footer__nav a {
+  color: #FFFFFF;
+}
+
+.site-footer .brand__mark {
+  filter: brightness(0) invert(1);
 }
 
 /* Section heading tiny warm underline */
@@ -1578,6 +1599,358 @@ body.has-menu-open {
     grid-template-columns: 200px 1fr;
     gap: 20px;
     align-items: baseline;
+  }
+}
+
+/* ============================================================
+   Location panel: compact / expanded toggle
+   ============================================================ */
+
+.location-panel__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px 8px 12px;
+  border: 2px solid #F0DDB8;
+  border-radius: 999px;
+  background: #FFFDF5;
+  color: #7A4000;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(224, 131, 0, .1);
+  transition: background .15s ease, transform .08s ease;
+}
+
+.location-panel__chip:hover,
+.location-panel__chip:focus-visible {
+  background: #FFEFD1;
+}
+
+.location-panel__chip:active {
+  transform: translateY(1px);
+}
+
+.location-panel__chip[hidden] {
+  display: none;
+}
+
+.location-panel__chip-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+.location-panel__chip-toggle {
+  color: #C96C00;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.location-panel.is-compact {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  margin-bottom: 18px;
+}
+
+.location-panel.is-compact .location-panel__body {
+  display: none;
+}
+
+/* ============================================================
+   Home hero (page-hero--home) — mock-style celebration FV
+   ============================================================ */
+
+body[data-page="shops"] .page-hero--home {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  min-height: 640px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, .45) 0 4px, transparent 5px) 0 0 / 42px 42px,
+    linear-gradient(180deg, #FFD98A 0%, #FFC24A 45%, #F5A623 100%);
+}
+
+.page-hero--home::before {
+  font-size: clamp(56px, 13vw, 128px);
+  inset: 28% -30% auto -30%;
+  color: rgba(255, 255, 255, .32);
+  transform: rotate(-4deg);
+  z-index: 1;
+}
+
+body[data-page="shops"] .page-hero--home .page-hero__inner {
+  position: relative;
+  z-index: 5;
+  display: block;
+  padding: 220px 20px 90px;
+  text-align: center;
+}
+
+.page-hero__eyebrow {
+  margin: 0 0 8px;
+  color: #1B2B4A;
+  font-size: clamp(15px, 3.6vw, 20px);
+  font-weight: 900;
+  letter-spacing: .04em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
+}
+
+.page-hero__title {
+  margin: 0;
+  color: #1B2B4A;
+  font-size: clamp(26px, 6vw, 44px);
+  font-weight: 900;
+  line-height: 1.35;
+  text-shadow: 0 2px 0 rgba(255, 255, 255, .55);
+}
+
+.page-hero__title::after {
+  content: none;
+}
+
+/* Monorail — diagonal at upper area */
+.page-hero__monorail {
+  position: absolute;
+  top: 30px;
+  left: -6%;
+  width: min(92%, 640px);
+  height: auto;
+  transform: rotate(-8deg);
+  transform-origin: 0 50%;
+  z-index: 3;
+  pointer-events: none;
+  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, .12));
+}
+
+/* Clouds scattered */
+.page-hero__cloud {
+  position: absolute;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.page-hero__cloud--a {
+  top: 90px;
+  right: 5%;
+  width: 180px;
+}
+
+.page-hero__cloud--b {
+  top: 250px;
+  left: 4%;
+  width: 130px;
+}
+
+.page-hero__cloud--c {
+  top: 30px;
+  right: 32%;
+  width: 80px;
+}
+
+/* Decorative floating tags */
+.page-hero__tag {
+  position: absolute;
+  z-index: 4;
+  pointer-events: none;
+  filter: drop-shadow(0 8px 14px rgba(0, 0, 0, .18));
+}
+
+.page-hero__tag--cert {
+  top: 0;
+  right: 10%;
+  height: 210px;
+  width: auto;
+}
+
+.page-hero__tag--phone {
+  top: 110px;
+  left: 6%;
+  height: 130px;
+  width: auto;
+  transform: rotate(-10deg);
+}
+
+.page-hero__tag--coupon {
+  top: 290px;
+  left: 3%;
+  width: 170px;
+  height: auto;
+  transform: rotate(-14deg);
+}
+
+/* Cityscape silhouette at bottom */
+.page-hero__cityscape {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (max-width: 640px) {
+  body[data-page="shops"] .page-hero--home {
+    min-height: 520px;
+  }
+  body[data-page="shops"] .page-hero--home .page-hero__inner {
+    padding: 170px 16px 80px;
+  }
+  .page-hero__monorail {
+    width: 110%;
+    left: -10%;
+    top: 24px;
+    transform: rotate(-9deg);
+  }
+  .page-hero__tag--cert {
+    right: 3%;
+    height: 150px;
+  }
+  .page-hero__tag--phone {
+    top: 80px;
+    left: 3%;
+    height: 90px;
+  }
+  .page-hero__tag--coupon {
+    top: 230px;
+    left: 3%;
+    width: 110px;
+  }
+  .page-hero__cloud--a {
+    width: 110px;
+    top: 60px;
+    right: 3%;
+  }
+  .page-hero__cloud--b {
+    width: 90px;
+    top: 200px;
+  }
+  .page-hero__cloud--c {
+    display: none;
+  }
+}
+
+@media (min-width: 1000px) {
+  body[data-page="shops"] .page-hero--home {
+    min-height: 720px;
+  }
+  body[data-page="shops"] .page-hero--home .page-hero__inner {
+    padding: 260px 20px 130px;
+  }
+  .page-hero__monorail {
+    width: min(60%, 720px);
+    top: 60px;
+  }
+  .page-hero__tag--cert {
+    right: 12%;
+    height: 240px;
+  }
+  .page-hero__tag--phone {
+    top: 130px;
+    left: 12%;
+    height: 150px;
+  }
+  .page-hero__tag--coupon {
+    top: 320px;
+    left: 8%;
+    width: 200px;
+  }
+  .page-hero__cloud--a {
+    top: 120px;
+    right: 12%;
+    width: 220px;
+  }
+  .page-hero__cloud--b {
+    top: 300px;
+    left: 10%;
+    width: 160px;
+  }
+}
+
+/* ============================================================
+   Quick nav — 3 circular icon shortcuts
+   ============================================================ */
+
+.quick-nav {
+  padding: 28px 16px 32px;
+  background: var(--paper);
+}
+
+.quick-nav__list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quick-nav__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 6px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform .12s ease;
+}
+
+.quick-nav__item:hover,
+.quick-nav__item:focus-visible {
+  transform: translateY(-2px);
+}
+
+.quick-nav__icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  box-shadow: 0 8px 18px rgba(224, 131, 0, .18);
+  background: #FFEFD1;
+}
+
+.quick-nav__label {
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: #F5A623;
+  text-underline-offset: 5px;
+  text-decoration-thickness: 2px;
+}
+
+@media (min-width: 480px) {
+  .quick-nav__icon {
+    width: 84px;
+    height: 84px;
+  }
+  .quick-nav__label {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 640px) {
+  .quick-nav {
+    padding: 40px 16px 44px;
+  }
+  .quick-nav__list {
+    gap: 32px;
+    grid-template-columns: repeat(3, auto);
+  }
+  .quick-nav__icon {
+    width: 96px;
+    height: 96px;
+  }
+  .quick-nav__label {
+    font-size: 14px;
   }
 }
 

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="対象店舗を探す">
+  <title>対象店舗を探す</title>
+  <circle cx="40" cy="40" r="36" fill="#FFEFD1"/>
+  <path d="M 20 22 L 60 22 L 62 30 L 18 30 Z" fill="#E08300"/>
+  <path d="M 18 30 Q 18 36 22 36 Q 26 36 26 30 Z" fill="#F5A623"/>
+  <path d="M 26 30 Q 26 36 30 36 Q 34 36 34 30 Z" fill="#FFC94A"/>
+  <path d="M 34 30 Q 34 36 38 36 Q 42 36 42 30 Z" fill="#F5A623"/>
+  <path d="M 42 30 Q 42 36 46 36 Q 50 36 50 30 Z" fill="#FFC94A"/>
+  <path d="M 50 30 Q 50 36 54 36 Q 58 36 58 30 Z" fill="#F5A623"/>
+  <path d="M 58 30 Q 58 36 62 36 L 62 30 Z" fill="#E08300"/>
+  <rect x="24" y="36" width="32" height="22" fill="#FFFFFF" stroke="#F5A623" stroke-width="2.2"/>
+  <rect x="34" y="42" width="12" height="16" fill="#F5A623"/>
+  <circle cx="55" cy="55" r="8" fill="#FFFFFF" stroke="#C96C00" stroke-width="2.6"/>
+  <line x1="60.5" y1="60.5" x2="66" y2="66" stroke="#C96C00" stroke-width="3.2" stroke-linecap="round"/>
+</svg>

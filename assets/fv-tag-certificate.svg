@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 70 220" role="img" aria-label="投票済証明書">
+  <title>投票済証明書</title>
+  <line x1="35" y1="0" x2="35" y2="14" stroke="#6E7681" stroke-width="1.5"/>
+  <circle cx="35" cy="14" r="3" fill="#8E96A2"/>
+  <path d="M 6 16 L 64 16 L 64 190 L 35 210 L 6 190 Z" fill="#F5A623"/>
+  <path d="M 6 16 L 64 16 L 64 26 L 6 26 Z" fill="#E08300"/>
+  <rect x="12" y="30" width="46" height="2" fill="#FFFFFF" opacity="0.55"/>
+  <g font-family="'Zen Maru Gothic','Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN',sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle">
+    <text x="35" y="60">投</text>
+    <text x="35" y="82">票</text>
+    <text x="35" y="104">済</text>
+    <text x="35" y="126">証</text>
+    <text x="35" y="148">明</text>
+    <text x="35" y="170">書</text>
+  </g>
+</svg>

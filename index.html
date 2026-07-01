@@ -47,25 +47,43 @@
   </div>
 
   <main>
-    <section class="page-hero compact">
-      <div class="container page-hero__grid">
-        <div class="page-hero__copy">
-          <p class="eyebrow">Shop List</p>
-          <h1>対象店舗一覧</h1>
-          <p>店舗カードから気になる参加店を探せます。対象商品や利用条件は詳細ページで確認できます。</p>
-        </div>
-        <figure class="page-hero__media">
-          <img src="assets/fv-shops.png" alt="" width="864" height="1821" fetchpriority="high">
-        </figure>
-        <div class="quick-guide">
-          <figure class="quick-guide__image">
-            <img src="assets/guide-flow.png" alt="" width="1774" height="887" fetchpriority="high">
-          </figure>
-          <div class="quick-guide__content">
-            <p>気になる店舗の詳細で対象商品と条件を確認し、来店時に必要に応じて投票済証明書を提示します。</p>
-            <a class="button button--primary" href="how-to-use.html">詳しい使い方を見る</a>
-          </div>
-        </div>
+    <section class="page-hero page-hero--home" aria-labelledby="page-hero-title">
+      <img class="page-hero__monorail" src="assets/fv-monorail.svg" alt="" width="520" height="200" fetchpriority="high">
+      <img class="page-hero__cloud page-hero__cloud--a" src="assets/fv-cloud-a.svg" alt="" width="220" height="100">
+      <img class="page-hero__cloud page-hero__cloud--b" src="assets/fv-cloud-b.svg" alt="" width="150" height="78">
+      <img class="page-hero__cloud page-hero__cloud--c" src="assets/fv-cloud-c.svg" alt="" width="100" height="56">
+      <img class="page-hero__tag page-hero__tag--cert" src="assets/fv-tag-certificate.svg" alt="" width="70" height="220">
+      <img class="page-hero__tag page-hero__tag--phone" src="assets/fv-tag-smartphone.svg" alt="" width="90" height="130">
+      <img class="page-hero__tag page-hero__tag--coupon" src="assets/fv-coupon.svg" alt="" width="200" height="90">
+      <div class="container page-hero__inner">
+        <p class="page-hero__eyebrow">稲毛区での</p>
+        <h1 id="page-hero-title" class="page-hero__title">投票お疲れさまでした！</h1>
+      </div>
+      <img class="page-hero__cityscape" src="assets/fv-cityscape.svg" alt="" width="800" height="160">
+    </section>
+
+    <section class="quick-nav" aria-label="クイックリンク">
+      <div class="container">
+        <ul class="quick-nav__list">
+          <li>
+            <a class="quick-nav__item" href="how-to-use.html">
+              <img class="quick-nav__icon" src="assets/icon-quick-howto.svg" alt="" width="80" height="80">
+              <span class="quick-nav__label">証明書の利用方法</span>
+            </a>
+          </li>
+          <li>
+            <a class="quick-nav__item" href="#shop-list-title">
+              <img class="quick-nav__icon" src="assets/icon-quick-shop.svg" alt="" width="80" height="80">
+              <span class="quick-nav__label">対象店舗を探す</span>
+            </a>
+          </li>
+          <li>
+            <a class="quick-nav__item" href="#locationSortPanel" data-action="expand-location">
+              <img class="quick-nav__icon" src="assets/icon-quick-nearby.svg" alt="" width="80" height="80">
+              <span class="quick-nav__label">近くから探す</span>
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -80,20 +98,27 @@
         </div>
 
         <div class="location-panel" id="locationSortPanel">
-          <div class="location-panel__copy">
-            <p class="location-panel__title">現在地から近い対象店舗を探せます</p>
-            <p id="locationSortStatus" aria-live="polite">位置情報を許可すると、近い店舗から順に並び替えます。</p>
-          </div>
-          <div class="location-panel__actions">
-            <button id="useCurrentLocation" class="button button--primary" type="button">現在地で近い順にする</button>
-            <button id="dismissLocationSort" class="button button--outline" type="button">今は使わない</button>
+          <button class="location-panel__chip" id="locationSortChip" type="button" hidden>
+            <img class="location-panel__chip-icon" src="assets/icon-map-pin.svg" alt="" width="16" height="16">
+            <span id="locationSortChipLabel">位置情報を使う</span>
+            <span class="location-panel__chip-toggle" aria-hidden="true">▾</span>
+          </button>
+          <div class="location-panel__body">
+            <div class="location-panel__copy">
+              <p class="location-panel__title">現在地から近い対象店舗を探せます</p>
+              <p id="locationSortStatus" aria-live="polite">位置情報を許可すると、近い店舗から順に並び替えます。</p>
+            </div>
+            <div class="location-panel__actions">
+              <button id="useCurrentLocation" class="button button--primary" type="button">現在地で近い順にする</button>
+              <button id="dismissLocationSort" class="button button--outline" type="button">今は使わない</button>
+            </div>
           </div>
         </div>
 
         <div class="list-head">
           <div>
             <p class="eyebrow">Benefits</p>
-            <h2 id="shop-list-title">使える特典</h2>
+            <h2 id="shop-list-title">特典が使える対象店舗</h2>
           </div>
           <p class="result-count"><span id="resultCount">0</span>件</p>
         </div>
