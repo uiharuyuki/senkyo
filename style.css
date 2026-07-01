@@ -1092,6 +1092,7 @@ body[data-page="shops"] .page-hero__media img {
 
 /* Shop card: mock-style thick orange frame */
 .shop-card {
+  position: relative;
   border: 5px solid #F5A623;
   border-radius: 20px;
   box-shadow: 0 12px 28px rgba(224, 131, 0, .14);
@@ -2192,5 +2193,64 @@ body[data-page="shops"] .page-hero--home::after {
     font-size: clamp(64px, 16vw, 108px);
     inset: 40% -30% auto -30%;
   }
+}
+
+/* ============================================================
+   Post-review fixes
+   ============================================================ */
+
+/* Fix 1: Center the 3 bars inside the circular menu badge */
+.menu-toggle {
+  justify-content: center;
+}
+
+/* Fix 2: Shop card cleanup — hide the in-body chip row,
+   show サンプル label as an absolute overlay on gallery top-right */
+.shop-card__top {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  left: auto;
+  z-index: 4;
+  display: block;
+  padding: 0;
+  margin: 0;
+  gap: 0;
+  min-height: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.shop-card__top .genre-icon,
+.shop-card__top .shop-card__genre {
+  display: none;
+}
+
+.shop-card__top .sample-label {
+  margin: 0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: rgba(217, 111, 89, .92);
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: 900;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, .18);
+}
+
+/* Fix 3: Compact hero (how-to-use / shop / contact) center-align */
+.page-hero.compact {
+  text-align: center;
+}
+
+.page-hero.compact .page-hero__link,
+.page-hero.compact .tag-row,
+.page-hero.compact .detail-actions {
+  justify-content: center;
+}
+
+/* Fix 4: Thank you watermark only on home hero */
+.page-hero:not(.page-hero--home)::before {
+  content: none;
 }
 

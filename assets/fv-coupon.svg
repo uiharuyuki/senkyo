@@ -17,10 +17,9 @@
     Q 24 36 14 34
     Z
   " fill="#F5A623"/>
-  <path d="M 100 26 L 100 30 M 100 34 L 100 38 M 100 42 L 100 46 M 100 50 L 100 54 M 100 58 L 100 62" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
-  <g font-family="'Zen Maru Gothic',sans-serif" font-weight="900">
-    <text x="58" y="52" font-size="20" fill="#FFFFFF" text-anchor="middle">クーポン</text>
-  </g>
-  <circle cx="145" cy="45" r="14" fill="#FFFFFF"/>
-  <text x="145" y="52" font-family="'Zen Maru Gothic',sans-serif" font-size="18" font-weight="900" fill="#E08300" text-anchor="middle">%</text>
+  <path d="M 100 24 L 100 66" stroke="#FFFFFF" stroke-width="2" stroke-dasharray="5 4" opacity="0.9"/>
+  <text x="58" y="53" font-family="'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif" font-size="22" font-weight="900" fill="#FFFFFF" text-anchor="middle">クーポン</text>
+  <circle cx="150" cy="45" r="18" fill="#FFFFFF"/>
+  <circle cx="150" cy="45" r="18" fill="none" stroke="#E08300" stroke-width="1"/>
+  <text x="150" y="55" font-family="'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif" font-size="26" font-weight="900" fill="#E08300" text-anchor="middle">%</text>
 </svg>
