@@ -87,6 +87,7 @@
     "id": "mugi-bakery",
     "name": "ベーカリー 麦日和",
     "image": "assets/shop-mugi-bakery.svg",
+    "cardImage": "assets/card-bakery-gallery.png",
     "sample": true,
     "genre": "ベーカリー",
     "area": "商店街",
@@ -100,8 +101,8 @@
     "mapQuery": "稲毛駅 パン屋",
     "galleryImages": [
       "assets/card-bakery-gallery.png",
-      "assets/product-shiopan.svg",
-      "assets/product-baked-set.svg"
+      "assets/product-shiopan.png",
+      "assets/product-baked-set.png"
     ],
     "tags": [
       "パン",
@@ -112,13 +113,13 @@
     "products": [
       {
         "name": "塩パン",
-        "image": "assets/product-shiopan.svg",
+        "image": "assets/product-shiopan.png",
         "benefit": "おすすめ対象商品",
         "condition": "売り切れ次第終了"
       },
       {
         "name": "焼き菓子セット",
-        "image": "assets/product-baked-set.svg",
+        "image": "assets/product-baked-set.png",
         "benefit": "投票後の寄り道商品として紹介",
         "condition": "店頭販売のみ"
       }
@@ -128,6 +129,7 @@
     "id": "komichi-books",
     "name": "本と小径 稲毛",
     "image": "assets/shop-komichi-books.svg",
+    "cardImage": "assets/card-books-gallery.png",
     "sample": true,
     "genre": "本屋",
     "area": "駅北側",
@@ -141,8 +143,8 @@
     "mapQuery": "稲毛駅 本屋",
     "galleryImages": [
       "assets/card-books-gallery.png",
-      "assets/product-books.svg",
-      "assets/product-book-goods.svg"
+      "assets/product-books.png",
+      "assets/product-book-goods.png"
     ],
     "tags": [
       "本",
@@ -153,13 +155,13 @@
     "products": [
       {
         "name": "文庫・新書",
-        "image": "assets/product-books.svg",
+        "image": "assets/product-books.png",
         "benefit": "スタッフのおすすめ棚を案内",
         "condition": "購入の有無を問わず利用可"
       },
       {
         "name": "読書雑貨",
-        "image": "assets/product-book-goods.svg",
+        "image": "assets/product-book-goods.png",
         "benefit": "対象商品として紹介",
         "condition": "一部商品を除く"
       }
@@ -169,6 +171,7 @@
     "id": "aoi-zakka",
     "name": "雑貨日々 aoi",
     "image": "assets/shop-aoi-zakka.svg",
+    "cardImage": "assets/card-zakka-gallery.png",
     "sample": true,
     "genre": "雑貨",
     "area": "商店街",
@@ -182,8 +185,8 @@
     "mapQuery": "稲毛駅 雑貨屋",
     "galleryImages": [
       "assets/card-zakka-gallery.png",
-      "assets/product-mini-gift.svg",
-      "assets/product-stationery.svg"
+      "assets/product-mini-gift.png",
+      "assets/product-stationery.png"
     ],
     "tags": [
       "雑貨",
@@ -194,13 +197,13 @@
     "products": [
       {
         "name": "ミニギフト",
-        "image": "assets/product-mini-gift.svg",
+        "image": "assets/product-mini-gift.png",
         "benefit": "対象商品として紹介",
         "condition": "在庫状況により変更"
       },
       {
         "name": "ステーショナリー",
-        "image": "assets/product-stationery.svg",
+        "image": "assets/product-stationery.png",
         "benefit": "地域応援アイテムとして紹介",
         "condition": "一部対象外あり"
       }
@@ -210,6 +213,7 @@
     "id": "michikusa-diner",
     "name": "食堂 みちくさ台",
     "image": "assets/shop-michikusa-diner.svg",
+    "cardImage": "assets/card-diner-gallery.png",
     "sample": true,
     "genre": "飲食店",
     "area": "駅南側",
@@ -223,8 +227,8 @@
     "mapQuery": "稲毛駅 食堂",
     "galleryImages": [
       "assets/card-diner-gallery.png",
-      "assets/product-teishoku.svg",
-      "assets/product-kobachi.svg"
+      "assets/product-teishoku.png",
+      "assets/product-kobachi.png"
     ],
     "tags": [
       "ごはん",
@@ -235,13 +239,13 @@
     "products": [
       {
         "name": "日替わり定食",
-        "image": "assets/product-teishoku.svg",
+        "image": "assets/product-teishoku.png",
         "benefit": "対象メニューとして紹介",
         "condition": "ランチ時間帯のみ"
       },
       {
         "name": "地元野菜の小鉢",
-        "image": "assets/product-kobachi.svg",
+        "image": "assets/product-kobachi.png",
         "benefit": "セット対象候補",
         "condition": "提供日は店舗で確認"
       }
@@ -251,6 +255,7 @@
     "id": "stroll-used",
     "name": "古着と散歩 stroll",
     "image": "assets/shop-stroll-used.svg",
+    "cardImage": "assets/card-used-gallery.png",
     "sample": true,
     "genre": "古着",
     "area": "稲毛駅周辺",
@@ -264,8 +269,8 @@
     "mapQuery": "稲毛駅 古着",
     "galleryImages": [
       "assets/card-used-gallery.png",
-      "assets/product-tops.svg",
-      "assets/product-accessory.svg"
+      "assets/product-tops.png",
+      "assets/product-accessory.png"
     ],
     "tags": [
       "古着",
@@ -276,15 +281,561 @@
     "products": [
       {
         "name": "古着トップス",
-        "image": "assets/product-tops.svg",
+        "image": "assets/product-tops.png",
         "benefit": "対象商品として紹介",
         "condition": "一部商品を除く"
       },
       {
         "name": "小物・アクセサリー",
-        "image": "assets/product-accessory.svg",
+        "image": "assets/product-accessory.png",
         "benefit": "寄り道商品として紹介",
         "condition": "在庫状況により変更"
+      }
+    ]
+  },
+  {
+    "id": "kaze-kissa",
+    "name": "喫茶 稲毛の風",
+    "image": "assets/shop-kaze-kissa.png",
+    "cardImage": "assets/card-kaze-kissa.png",
+    "sample": true,
+    "genre": "カフェ",
+    "area": "駅南側",
+    "distance": "稲毛駅から徒歩5分",
+    "location": {
+      "lat": 35.6362,
+      "lng": 140.0927
+    },
+    "catch": "サイフォンで丁寧に淹れる、静かな昭和喫茶。",
+    "summary": "レトロな内装で一杯ずつ淹れるコーヒーとケーキを楽しめる、地域の休憩スポットを想定しています。",
+    "mapQuery": "稲毛駅 喫茶店",
+    "galleryImages": [
+      "assets/card-kaze-kissa.png",
+      "assets/product-cafe-siphon.png",
+      "assets/product-cafe-cake.png"
+    ],
+    "tags": [
+      "喫茶",
+      "ひと休み",
+      "地域応援"
+    ],
+    "conditions": "対象商品と特典は店頭で確認。",
+    "products": [
+      {
+        "name": "サイフォンコーヒー",
+        "image": "assets/product-cafe-siphon.png",
+        "benefit": "小さな焼き菓子を添える",
+        "condition": "店内利用時のみ"
+      },
+      {
+        "name": "季節のケーキ",
+        "image": "assets/product-cafe-cake.png",
+        "benefit": "ドリンクセット時に紹介",
+        "condition": "在庫状況により変更"
+      }
+    ]
+  },
+  {
+    "id": "tokosoko-cake",
+    "name": "洋菓子 tokosoko",
+    "image": "assets/shop-tokosoko-cake.png",
+    "cardImage": "assets/card-tokosoko-cake.png",
+    "sample": true,
+    "genre": "洋菓子",
+    "area": "商店街",
+    "distance": "稲毛駅から徒歩7分",
+    "location": {
+      "lat": 35.6355,
+      "lng": 140.0949
+    },
+    "catch": "焼きたて焼き菓子と季節のケーキが並ぶ小さな店。",
+    "summary": "マドレーヌ・パウンド・季節フルーツのケーキなどを扱う洋菓子店を想定しています。",
+    "mapQuery": "稲毛駅 洋菓子",
+    "galleryImages": [
+      "assets/card-tokosoko-cake.png",
+      "assets/product-cake-strawberry.png",
+      "assets/product-baked-madeleine.png"
+    ],
+    "tags": [
+      "洋菓子",
+      "ギフト",
+      "地域応援"
+    ],
+    "conditions": "予約商品は含みません。",
+    "products": [
+      {
+        "name": "季節のショートケーキ",
+        "image": "assets/product-cake-strawberry.png",
+        "benefit": "対象商品として紹介",
+        "condition": "予約商品を除く"
+      },
+      {
+        "name": "マドレーヌ詰め合わせ",
+        "image": "assets/product-baked-madeleine.png",
+        "benefit": "手土産として案内",
+        "condition": "個数限定"
+      }
+    ]
+  },
+  {
+    "id": "ippon-flower",
+    "name": "花屋 一本の草花",
+    "image": "assets/shop-ippon-flower.png",
+    "cardImage": "assets/card-ippon-flower.png",
+    "sample": true,
+    "genre": "花屋",
+    "area": "稲毛駅周辺",
+    "distance": "稲毛駅から徒歩3分",
+    "location": {
+      "lat": 35.6375,
+      "lng": 140.0929
+    },
+    "catch": "一本から花束まで、日常に草花を。",
+    "summary": "季節の花・観葉植物・スワッグを扱う小さな花屋を想定しています。",
+    "mapQuery": "稲毛駅 花屋",
+    "galleryImages": [
+      "assets/card-ippon-flower.png",
+      "assets/product-flower-bouquet.png",
+      "assets/product-flower-wreath.png"
+    ],
+    "tags": [
+      "花",
+      "ギフト",
+      "まち歩き"
+    ],
+    "conditions": "特典内容は季節により変動。",
+    "products": [
+      {
+        "name": "季節のミニ花束",
+        "image": "assets/product-flower-bouquet.png",
+        "benefit": "対象商品として紹介",
+        "condition": "在庫状況により変更"
+      },
+      {
+        "name": "ドライフラワーのスワッグ",
+        "image": "assets/product-flower-wreath.png",
+        "benefit": "地域応援ギフトとして案内",
+        "condition": "予約可"
+      }
+    ]
+  },
+  {
+    "id": "ginan-chinese",
+    "name": "中華 銀杏亭",
+    "image": "assets/shop-ginan-chinese.png",
+    "cardImage": "assets/card-ginan-chinese.png",
+    "sample": true,
+    "genre": "中華",
+    "area": "商店街",
+    "distance": "稲毛駅から徒歩6分",
+    "location": {
+      "lat": 35.6363,
+      "lng": 140.0952
+    },
+    "catch": "家族で通える町中華の定食店。",
+    "summary": "担々麺やチャーハン、日替わり中華定食を扱う地域の中華食堂を想定しています。",
+    "mapQuery": "稲毛駅 中華",
+    "galleryImages": [
+      "assets/card-ginan-chinese.png",
+      "assets/product-chinese-tantan.png",
+      "assets/product-chinese-fried-rice.png"
+    ],
+    "tags": [
+      "中華",
+      "昼食",
+      "地域応援"
+    ],
+    "conditions": "ランチ時間帯は混雑の可能性あり。",
+    "products": [
+      {
+        "name": "担々麺",
+        "image": "assets/product-chinese-tantan.png",
+        "benefit": "対象メニューとして紹介",
+        "condition": "提供時間帯は店舗で確認"
+      },
+      {
+        "name": "五目チャーハン",
+        "image": "assets/product-chinese-fried-rice.png",
+        "benefit": "セット候補として案内",
+        "condition": "在庫状況により変更"
+      }
+    ]
+  },
+  {
+    "id": "minamo-wagashi",
+    "name": "和菓子 みなも屋",
+    "image": "assets/shop-minamo-wagashi.png",
+    "cardImage": "assets/card-minamo-wagashi.png",
+    "sample": true,
+    "genre": "和菓子",
+    "area": "駅北側",
+    "distance": "稲毛駅から徒歩5分",
+    "location": {
+      "lat": 35.6389,
+      "lng": 140.0929
+    },
+    "catch": "手仕事の和菓子と季節の生菓子。",
+    "summary": "どら焼き、羊羹、季節の生菓子を扱う地域の和菓子店を想定しています。",
+    "mapQuery": "稲毛駅 和菓子",
+    "galleryImages": [
+      "assets/card-minamo-wagashi.png",
+      "assets/product-wagashi-dorayaki.png",
+      "assets/product-wagashi-yokan.png"
+    ],
+    "tags": [
+      "和菓子",
+      "手土産",
+      "地域応援"
+    ],
+    "conditions": "生菓子は当日限定。",
+    "products": [
+      {
+        "name": "手作りどら焼き",
+        "image": "assets/product-wagashi-dorayaki.png",
+        "benefit": "対象商品として紹介",
+        "condition": "売り切れ次第終了"
+      },
+      {
+        "name": "季節の羊羹",
+        "image": "assets/product-wagashi-yokan.png",
+        "benefit": "手土産候補として案内",
+        "condition": "予約可"
+      }
+    ]
+  },
+  {
+    "id": "nagisa-teishoku",
+    "name": "定食 なぎさ",
+    "image": "assets/shop-nagisa-teishoku.png",
+    "cardImage": "assets/card-nagisa-teishoku.png",
+    "sample": true,
+    "genre": "飲食店",
+    "area": "駅南側",
+    "distance": "稲毛駅から徒歩8分",
+    "location": {
+      "lat": 35.6358,
+      "lng": 140.0913
+    },
+    "catch": "港町の魚と季節の煮物が並ぶ定食屋。",
+    "summary": "焼き魚・煮物・季節野菜の定食を提供する家族向け飲食店を想定しています。",
+    "mapQuery": "稲毛駅 定食",
+    "galleryImages": [
+      "assets/card-nagisa-teishoku.png",
+      "assets/product-teishoku-fish.png",
+      "assets/product-teishoku-nimono.png"
+    ],
+    "tags": [
+      "定食",
+      "昼食",
+      "地域応援"
+    ],
+    "conditions": "ランチ時間帯のみ提供。",
+    "products": [
+      {
+        "name": "焼き魚定食",
+        "image": "assets/product-teishoku-fish.png",
+        "benefit": "対象メニューとして紹介",
+        "condition": "仕入れ状況により変更"
+      },
+      {
+        "name": "季節の煮物小鉢",
+        "image": "assets/product-teishoku-nimono.png",
+        "benefit": "セット候補として案内",
+        "condition": "在庫状況により変更"
+      }
+    ]
+  },
+  {
+    "id": "oka-gelato",
+    "name": "ジェラート 丘の上",
+    "image": "assets/shop-oka-gelato.png",
+    "cardImage": "assets/card-oka-gelato.png",
+    "sample": true,
+    "genre": "スイーツ",
+    "area": "商店街",
+    "distance": "稲毛駅から徒歩8分",
+    "location": {
+      "lat": 35.6362,
+      "lng": 140.0961
+    },
+    "catch": "地元の果物と牛乳で作る季節のジェラート。",
+    "summary": "千葉の果物・野菜を活かした季節のジェラートを提供する店舗を想定しています。",
+    "mapQuery": "稲毛駅 ジェラート",
+    "galleryImages": [
+      "assets/card-oka-gelato.png",
+      "assets/product-gelato-scoop.png",
+      "assets/product-gelato-cone.png"
+    ],
+    "tags": [
+      "スイーツ",
+      "ひと休み",
+      "地域応援"
+    ],
+    "conditions": "フレーバーは日替わり。",
+    "products": [
+      {
+        "name": "季節のジェラート",
+        "image": "assets/product-gelato-scoop.png",
+        "benefit": "対象商品として紹介",
+        "condition": "在庫状況により変更"
+      },
+      {
+        "name": "コーンダブル",
+        "image": "assets/product-gelato-cone.png",
+        "benefit": "セット候補として案内",
+        "condition": "テイクアウトのみ"
+      }
+    ]
+  },
+  {
+    "id": "futaba-tea",
+    "name": "お茶 ふたば",
+    "image": "assets/shop-futaba-tea.png",
+    "cardImage": "assets/card-futaba-tea.png",
+    "sample": true,
+    "genre": "日本茶",
+    "area": "駅北側",
+    "distance": "稲毛駅から徒歩6分",
+    "location": {
+      "lat": 35.6383,
+      "lng": 140.0918
+    },
+    "catch": "静かな時間を楽しめる日本茶のお店。",
+    "summary": "煎茶・抹茶と和菓子を提供する日本茶の茶葉ショップを想定しています。",
+    "mapQuery": "稲毛駅 日本茶",
+    "galleryImages": [
+      "assets/card-futaba-tea.png",
+      "assets/product-tea-sencha.png",
+      "assets/product-tea-sweets.png"
+    ],
+    "tags": [
+      "日本茶",
+      "ひと休み",
+      "地域応援"
+    ],
+    "conditions": "席数に限りあり。",
+    "products": [
+      {
+        "name": "煎茶と和菓子のセット",
+        "image": "assets/product-tea-sencha.png",
+        "benefit": "対象メニューとして紹介",
+        "condition": "席に空きがある場合"
+      },
+      {
+        "name": "季節の茶菓子詰め合わせ",
+        "image": "assets/product-tea-sweets.png",
+        "benefit": "手土産候補として案内",
+        "condition": "予約可"
+      }
+    ]
+  },
+  {
+    "id": "michi-bento",
+    "name": "弁当 みちしるべ",
+    "image": "assets/shop-michi-bento.png",
+    "cardImage": "assets/card-michi-bento.png",
+    "sample": true,
+    "genre": "弁当",
+    "area": "商店街",
+    "distance": "稲毛駅から徒歩4分",
+    "location": {
+      "lat": 35.6368,
+      "lng": 140.0955
+    },
+    "catch": "手作りおかずが並ぶ、毎日の帰り道の弁当屋。",
+    "summary": "幕の内・日替わりのり弁・惣菜を扱う地域の弁当店を想定しています。",
+    "mapQuery": "稲毛駅 弁当",
+    "galleryImages": [
+      "assets/card-michi-bento.png",
+      "assets/product-bento-makunouchi.png",
+      "assets/product-bento-side.png"
+    ],
+    "tags": [
+      "弁当",
+      "テイクアウト",
+      "地域応援"
+    ],
+    "conditions": "テイクアウトのみ。",
+    "products": [
+      {
+        "name": "日替わり幕の内",
+        "image": "assets/product-bento-makunouchi.png",
+        "benefit": "対象商品として紹介",
+        "condition": "売り切れ次第終了"
+      },
+      {
+        "name": "手作り惣菜パック",
+        "image": "assets/product-bento-side.png",
+        "benefit": "セット候補として案内",
+        "condition": "在庫状況により変更"
+      }
+    ]
+  },
+  {
+    "id": "hikari-curry",
+    "name": "カレー spice-hikari",
+    "image": "assets/shop-hikari-curry.png",
+    "cardImage": "assets/card-hikari-curry.png",
+    "sample": true,
+    "genre": "カレー",
+    "area": "駅南側",
+    "distance": "稲毛駅から徒歩7分",
+    "location": {
+      "lat": 35.6353,
+      "lng": 140.0932
+    },
+    "catch": "スパイスから作るカジュアルなカレー店。",
+    "summary": "チキンカレー・季節の野菜カレー・ラッシーを提供するカレー店を想定しています。",
+    "mapQuery": "稲毛駅 カレー",
+    "galleryImages": [
+      "assets/card-hikari-curry.png",
+      "assets/product-curry-chicken.png",
+      "assets/product-curry-lassi.png"
+    ],
+    "tags": [
+      "カレー",
+      "昼食",
+      "地域応援"
+    ],
+    "conditions": "ランチ時間帯のみ提供。",
+    "products": [
+      {
+        "name": "チキンカレー",
+        "image": "assets/product-curry-chicken.png",
+        "benefit": "対象メニューとして紹介",
+        "condition": "提供時間帯は店舗で確認"
+      },
+      {
+        "name": "季節のラッシー",
+        "image": "assets/product-curry-lassi.png",
+        "benefit": "セット候補として案内",
+        "condition": "在庫状況により変更"
+      }
+    ]
+  },
+  {
+    "id": "sora-pottery",
+    "name": "陶器 sora",
+    "image": "assets/shop-sora-pottery.png",
+    "cardImage": "assets/card-sora-pottery.png",
+    "sample": true,
+    "genre": "工芸",
+    "area": "稲毛駅周辺",
+    "distance": "稲毛駅から徒歩5分",
+    "location": {
+      "lat": 35.6371,
+      "lng": 140.0942
+    },
+    "catch": "手仕事の器と暮らしの道具を扱う工房。",
+    "summary": "陶器の器やカップを扱う小さな工房を想定しています。",
+    "mapQuery": "稲毛駅 陶器",
+    "galleryImages": [
+      "assets/card-sora-pottery.png",
+      "assets/product-pottery-cup.png",
+      "assets/product-pottery-plate.png"
+    ],
+    "tags": [
+      "工芸",
+      "ギフト",
+      "発見"
+    ],
+    "conditions": "一点ものは在庫限り。",
+    "products": [
+      {
+        "name": "手びねりのカップ",
+        "image": "assets/product-pottery-cup.png",
+        "benefit": "対象商品として紹介",
+        "condition": "在庫状況により変更"
+      },
+      {
+        "name": "小皿",
+        "image": "assets/product-pottery-plate.png",
+        "benefit": "ギフト候補として案内",
+        "condition": "一点もの含む"
+      }
+    ]
+  },
+  {
+    "id": "en-glasses",
+    "name": "眼鏡 縁",
+    "image": "assets/shop-en-glasses.png",
+    "cardImage": "assets/card-en-glasses.png",
+    "sample": true,
+    "genre": "眼鏡",
+    "area": "商店街",
+    "distance": "稲毛駅から徒歩5分",
+    "location": {
+      "lat": 35.6366,
+      "lng": 140.0946
+    },
+    "catch": "顔と暮らしに合う一本を選べる眼鏡店。",
+    "summary": "眼鏡フレームの調整・クリーニング・小物を扱う店舗を想定しています。",
+    "mapQuery": "稲毛駅 眼鏡",
+    "galleryImages": [
+      "assets/card-en-glasses.png",
+      "assets/product-glasses-frame.png",
+      "assets/product-glasses-cloth.png"
+    ],
+    "tags": [
+      "眼鏡",
+      "調整",
+      "地域応援"
+    ],
+    "conditions": "度数調整は要予約。",
+    "products": [
+      {
+        "name": "フレーム調整",
+        "image": "assets/product-glasses-frame.png",
+        "benefit": "対象サービスとして紹介",
+        "condition": "他店購入品も対応可"
+      },
+      {
+        "name": "眼鏡クロス",
+        "image": "assets/product-glasses-cloth.png",
+        "benefit": "手土産として案内",
+        "condition": "在庫状況により変更"
+      }
+    ]
+  },
+  {
+    "id": "shirogane-tenugui",
+    "name": "手ぬぐい しろがね",
+    "image": "assets/shop-shirogane-tenugui.png",
+    "cardImage": "assets/card-shirogane-tenugui.png",
+    "sample": true,
+    "genre": "和雑貨",
+    "area": "駅北側",
+    "distance": "稲毛駅から徒歩7分",
+    "location": {
+      "lat": 35.6392,
+      "lng": 140.0937
+    },
+    "catch": "手ぬぐいで暮らしを彩る和雑貨のお店。",
+    "summary": "千葉の風景や季節を柄にした手ぬぐいと和雑貨を扱う店舗を想定しています。",
+    "mapQuery": "稲毛駅 和雑貨",
+    "galleryImages": [
+      "assets/card-shirogane-tenugui.png",
+      "assets/product-tenugui-print.png",
+      "assets/product-tenugui-set.png"
+    ],
+    "tags": [
+      "和雑貨",
+      "ギフト",
+      "発見"
+    ],
+    "conditions": "柄は入荷ごとに変更。",
+    "products": [
+      {
+        "name": "季節の手ぬぐい",
+        "image": "assets/product-tenugui-print.png",
+        "benefit": "対象商品として紹介",
+        "condition": "在庫状況により変更"
+      },
+      {
+        "name": "手ぬぐい詰め合わせ",
+        "image": "assets/product-tenugui-set.png",
+        "benefit": "ギフト候補として案内",
+        "condition": "予約可"
       }
     ]
   }
