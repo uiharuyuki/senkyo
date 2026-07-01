@@ -5,19 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>店舗詳細 | いなげ地域応援スポット</title>
   <meta name="description" content="対象店舗の詳細、対象商品、利用条件を確認できます。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+  <link rel="preload" as="image" href="assets/logo-inage.svg">
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-page="shop-detail">
+  <div class="app-loader" id="appLoader" aria-hidden="true">
+    <div class="app-loader__inner">
+      <img class="app-loader__logo" src="assets/logo-inage.svg" alt="" width="240" height="240">
+      <p class="app-loader__label">稲毛区選挙プロジェクト</p>
+    </div>
+  </div>
   <header class="site-header">
     <a class="brand" href="index.html" aria-label="いなげ地域応援スポット トップへ">
-      <span class="brand__mark">稲</span>
+      <img class="brand__mark" src="assets/logo-inage.svg" alt="" width="40" height="40">
       <span>いなげ地域応援スポット</span>
     </a>
-    <nav class="site-nav" aria-label="主要ナビゲーション">
-      <a href="index.html">対象店舗</a>
-      <a href="how-to-use.html">使い方</a>
-    </nav>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-label="メニューを開く" aria-controls="siteMenu" aria-expanded="false">
+      <span class="menu-toggle__icon" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+      <span class="menu-toggle__label">menu</span>
+    </button>
   </header>
+
+  <div class="site-menu" id="siteMenu" aria-hidden="true">
+    <div class="site-menu__backdrop" data-menu-close></div>
+    <nav class="site-menu__panel" aria-label="サイトメニュー">
+      <button class="site-menu__close" type="button" aria-label="メニューを閉じる" data-menu-close>
+        <span aria-hidden="true">×</span>
+      </button>
+      <ul class="site-menu__list">
+        <li><a href="index.html">対象店舗</a></li>
+        <li><a href="how-to-use.html">使い方</a></li>
+        <li><a href="index.html#faq">Q&amp;A</a></li>
+        <li><a href="contact.html">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </div>
 
   <main id="shopDetail" class="shop-detail-page" aria-live="polite">
     <section class="page-hero compact">
@@ -32,7 +59,7 @@
     <div class="container site-footer__inner">
       <div>
         <a class="brand site-footer__brand" href="index.html" aria-label="いなげ地域応援スポット トップへ">
-          <span class="brand__mark">稲</span>
+          <img class="brand__mark" src="assets/logo-inage.svg" alt="" width="40" height="40">
           <span>いなげ地域応援スポット</span>
         </a>
         <p class="site-footer__message">投票した帰りに、稲毛を少し歩きたくなる。</p>
@@ -40,11 +67,15 @@
       <nav class="site-footer__nav" aria-label="フッターナビゲーション">
         <a href="index.html">対象店舗</a>
         <a href="how-to-use.html">使い方</a>
+        <a href="index.html#faq">Q&amp;A</a>
+        <a href="contact.html">お問い合わせ</a>
       </nav>
       <p class="site-footer__note">特典内容や利用条件は参加店舗ごとに異なる場合があります。実施前に、投票済証明書の扱いと掲載条件を関係者確認のうえ更新します。</p>
     </div>
   </footer>
 
   <script src="app.js"></script>
+  <script src="menu.js"></script>
+  <script src="loader.js"></script>
 </body>
 </html>
