@@ -205,6 +205,7 @@
           '  <div class="shop-card__gallery" data-shop-carousel aria-label="対象商品の画像">',
           '    <div class="shop-card__gallery-track">' + galleryHtml + "</div>",
           galleryImages.length > 1 ? '    <div class="shop-card__gallery-dots" aria-hidden="true">' + galleryDots + "</div>" : "",
+          '    <span class="shop-card__gallery-badge" aria-hidden="true"><img src="' + genreIconUrl(store.genre) + '" alt="" width="26" height="26" loading="lazy"></span>',
           "  </div>"
         ].join("") : "",
         '  <div class="shop-card__top">',

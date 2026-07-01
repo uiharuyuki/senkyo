@@ -1954,3 +1954,243 @@ body[data-page="shops"] .page-hero--home .page-hero__inner {
   }
 }
 
+/* ============================================================
+   Menu toggle: option A — circular badge (no label)
+   ============================================================ */
+
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  gap: 0;
+  border: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #F5A623, #E08300);
+  color: #FFFFFF;
+  box-shadow: 0 4px 10px rgba(224, 131, 0, .3);
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible {
+  background: linear-gradient(135deg, #FFB93A, #E88900);
+}
+
+.menu-toggle__icon {
+  width: 18px;
+  height: 12px;
+}
+
+.menu-toggle__icon > span {
+  background: #FFFFFF;
+  height: 2.5px;
+}
+
+.menu-toggle.is-active .menu-toggle__icon > span:nth-child(1) {
+  transform: translateY(4.75px) rotate(45deg);
+}
+
+.menu-toggle.is-active .menu-toggle__icon > span:nth-child(3) {
+  transform: translateY(-4.75px) rotate(-45deg);
+}
+
+.menu-toggle__label { display: none; }
+
+/* ============================================================
+   Section heading: center-aligned with center underline
+   ============================================================ */
+
+.section > .container > h2,
+.section > .container > .eyebrow {
+  text-align: center;
+}
+
+.list-head {
+  display: block;
+  text-align: center;
+}
+
+.list-head > div {
+  display: block;
+}
+
+.list-head .result-count {
+  margin-top: 6px;
+}
+
+.section h2::after {
+  width: 44px;
+  height: 4px;
+  margin: 12px auto 0;
+}
+
+/* ============================================================
+   Show more shops — link-style CTA
+   ============================================================ */
+
+.show-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 6px;
+  border: 0;
+  background: none;
+  color: #C96C00;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-color: #F5A623;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+  cursor: pointer;
+}
+
+.show-more::after {
+  content: "→";
+}
+
+.show-more[hidden] { display: none; }
+
+/* ============================================================
+   Contact CTA link between FAQ and footer
+   ============================================================ */
+
+.contact-cta {
+  padding: 8px 16px 36px;
+  background: var(--paper);
+  text-align: center;
+}
+
+.contact-cta__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #C96C00;
+  font-size: 15px;
+  font-weight: 900;
+  text-decoration: underline;
+  text-decoration-color: #F5A623;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+.contact-cta__link::after {
+  content: "→";
+}
+
+/* ============================================================
+   Footer credit
+   ============================================================ */
+
+.site-footer__credit {
+  margin: 22px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid rgba(255, 255, 255, .28);
+  color: rgba(255, 255, 255, .82);
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: .04em;
+}
+
+.site-footer__inner .site-footer__credit {
+  grid-column: 1 / -1;
+}
+
+/* ============================================================
+   Header: translucent overlay, blends into hero
+   ============================================================ */
+
+.site-header {
+  background: rgba(255, 247, 232, .55);
+  backdrop-filter: blur(16px) saturate(1.25);
+  -webkit-backdrop-filter: blur(16px) saturate(1.25);
+  border-bottom: 1px solid rgba(224, 131, 0, .18);
+}
+
+/* ============================================================
+   Shop card gallery: floating genre badge (bottom-right of photo)
+   ============================================================ */
+
+.shop-card__gallery-badge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 46px;
+  height: 46px;
+  display: inline-grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #FFFFFF;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, .22);
+  z-index: 3;
+}
+
+.shop-card__gallery-badge img {
+  width: 28px;
+  height: 28px;
+}
+
+/* Hide the in-body genre-icon now that we have the gallery badge */
+.shop-card__top .genre-icon {
+  display: none;
+}
+
+/* ============================================================
+   Hero position tweaks (Step 7) — closer to mock
+   ============================================================ */
+
+.page-hero__monorail {
+  width: min(105%, 700px);
+  top: 18px;
+  left: -8%;
+  transform: rotate(-11deg);
+}
+
+.page-hero--home::before {
+  font-size: clamp(72px, 15vw, 148px);
+  inset: 34% -30% auto -30%;
+  transform: rotate(-6deg);
+  color: rgba(255, 255, 255, .36);
+}
+
+.page-hero__cityscape {
+  z-index: 2;
+}
+
+.page-hero__cityscape::before,
+body[data-page="shops"] .page-hero--home::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+  background: linear-gradient(180deg, rgba(245, 166, 35, 0) 0%, rgba(224, 131, 0, .18) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (min-width: 1000px) {
+  .page-hero__monorail {
+    width: min(66%, 780px);
+    top: 40px;
+    transform: rotate(-10deg);
+  }
+  .page-hero--home::before {
+    font-size: clamp(96px, 12vw, 176px);
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero__monorail {
+    width: 118%;
+    left: -10%;
+    top: 18px;
+    transform: rotate(-12deg);
+  }
+  .page-hero--home::before {
+    font-size: clamp(64px, 16vw, 108px);
+    inset: 40% -30% auto -30%;
+  }
+}
+
