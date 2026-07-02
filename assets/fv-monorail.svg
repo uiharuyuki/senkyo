@@ -1,72 +1,114 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" role="img" aria-label="千葉都市モノレール">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 260" role="img" aria-label="千葉都市モノレール">
   <title>千葉都市モノレール</title>
   <defs>
-    <linearGradient id="fvMonoBeam" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#E2E7EF"/>
-      <stop offset="1" stop-color="#8B93A0"/>
-    </linearGradient>
-    <linearGradient id="fvMonoBody" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#26B7EA"/>
-      <stop offset="1" stop-color="#0180BC"/>
-    </linearGradient>
-    <linearGradient id="fvMonoWindow" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0" stop-color="#DFF3FC"/>
-      <stop offset="1" stop-color="#8EC9E7"/>
+    <pattern id="fvMonoHalftone" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+      <circle cx="7" cy="7" r="1.6" fill="#082A48" opacity="0.32"/>
+    </pattern>
+    <linearGradient id="fvMonoBeamShine" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F1F4F8"/>
+      <stop offset="1" stop-color="#B7BEC9"/>
     </linearGradient>
   </defs>
 
-  <!-- Guideway beam (suspended-type track above the train) -->
-  <rect x="0" y="6" width="520" height="24" rx="5" fill="url(#fvMonoBeam)"/>
-  <rect x="0" y="26" width="520" height="4" fill="#5D6572"/>
-  <rect x="10" y="12" width="500" height="2" fill="#FFFFFF" opacity="0.6"/>
+  <!-- ===== Guideway beam (suspended-monorail track above the car) ===== -->
+  <rect x="0" y="4" width="760" height="30" fill="url(#fvMonoBeamShine)" stroke="#0A1A2E" stroke-width="3"/>
+  <rect x="6" y="9" width="748" height="3" fill="#FFFFFF" opacity="0.85"/>
+  <rect x="0" y="30" width="760" height="6" fill="#2C333F"/>
+  <line x1="0" y1="36" x2="760" y2="36" stroke="#0A1A2E" stroke-width="2"/>
 
-  <!-- Bogie / truck boxes connecting beam to car body -->
-  <rect x="60" y="30" width="70" height="18" rx="2" fill="#4A525E"/>
-  <rect x="240" y="30" width="70" height="18" rx="2" fill="#4A525E"/>
-  <rect x="390" y="30" width="60" height="18" rx="2" fill="#4A525E"/>
+  <!-- ===== Bogie / hanger boxes between beam and car top ===== -->
+  <g stroke="#0A1A2E" stroke-width="3">
+    <rect x="150" y="36" width="78" height="26" fill="#4A525E"/>
+    <rect x="410" y="36" width="78" height="26" fill="#4A525E"/>
+    <rect x="640" y="36" width="78" height="26" fill="#4A525E"/>
+  </g>
 
-  <!-- Car body: rounded rectangle with pronounced nose on the right -->
+  <!-- ===== Car body (nose on LEFT) ===== -->
+  <!-- Full body silhouette in darker teal -->
   <path d="
-    M 32 60
-    Q 32 50 42 50
-    L 425 50
-    Q 490 50 490 108
-    Q 490 168 425 168
-    L 42 168
-    Q 32 168 32 158
+    M 92 62
+    Q 40 62 22 140
+    Q 40 220 92 220
+    L 760 220
+    L 760 62
     Z
-  " fill="url(#fvMonoBody)"/>
+  " fill="#0F7BB0" stroke="#0A1A2E" stroke-width="4"/>
 
-  <!-- Windows band -->
-  <rect x="48" y="72" width="410" height="34" rx="5" fill="url(#fvMonoWindow)"/>
+  <!-- Upper body (lighter cyan) -->
+  <path d="
+    M 92 62
+    Q 40 62 26 132
+    L 760 132
+    L 760 62
+    Z
+  " fill="#3ABEEA"/>
+
+  <!-- Halftone dots overlay on lower panel -->
+  <path d="
+    M 26 138
+    Q 40 220 92 220
+    L 760 220
+    L 760 138
+    Z
+  " fill="url(#fvMonoHalftone)"/>
+
+  <!-- Yellow livery stripe just under windows -->
+  <rect x="24" y="130" width="736" height="6" fill="#FFD24C"/>
+  <rect x="24" y="136" width="736" height="2" fill="#E8A424"/>
+
+  <!-- ===== Windows band (individual windows) ===== -->
+  <rect x="96" y="78" width="612" height="44" fill="#D5ECF6" stroke="#0A1A2E" stroke-width="2.5"/>
 
   <!-- Window dividers -->
-  <rect x="126" y="72" width="4" height="34" fill="#005A94"/>
-  <rect x="200" y="72" width="4" height="34" fill="#005A94"/>
-  <rect x="274" y="72" width="4" height="34" fill="#005A94"/>
-  <rect x="348" y="72" width="4" height="34" fill="#005A94"/>
-  <rect x="422" y="72" width="4" height="34" fill="#005A94"/>
+  <g stroke="#0A1A2E" stroke-width="3">
+    <line x1="184" y1="78" x2="184" y2="122"/>
+    <line x1="272" y1="78" x2="272" y2="122"/>
+    <line x1="360" y1="78" x2="360" y2="122"/>
+    <line x1="448" y1="78" x2="448" y2="122"/>
+    <line x1="536" y1="78" x2="536" y2="122"/>
+    <line x1="624" y1="78" x2="624" y2="122"/>
+  </g>
 
-  <!-- Doors (darker vertical strips) -->
-  <rect x="76" y="64" width="16" height="98" fill="#004A7A"/>
-  <rect x="228" y="64" width="16" height="98" fill="#004A7A"/>
-  <rect x="380" y="64" width="16" height="98" fill="#004A7A"/>
+  <!-- Window inner tint (softer blue rectangles) -->
+  <g fill="#A9D5EA" opacity="0.55">
+    <rect x="100" y="82" width="80" height="20"/>
+    <rect x="188" y="82" width="80" height="20"/>
+    <rect x="276" y="82" width="80" height="20"/>
+    <rect x="364" y="82" width="80" height="20"/>
+    <rect x="452" y="82" width="80" height="20"/>
+    <rect x="540" y="82" width="80" height="20"/>
+    <rect x="628" y="82" width="76" height="20"/>
+  </g>
 
-  <!-- White accent stripe below windows -->
-  <rect x="32" y="108" width="458" height="5" fill="#FFFFFF"/>
+  <!-- ===== Nose windshield (dark, at far left) ===== -->
+  <path d="M 96 78 Q 52 78 32 132 L 96 132 Z" fill="#164C74" stroke="#0A1A2E" stroke-width="3"/>
+  <path d="M 78 82 Q 58 96 44 122" stroke="#8FC7E0" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 68 84 Q 52 100 40 124" stroke="#C6E1EE" stroke-width="1.8" fill="none" stroke-linecap="round" opacity="0.75"/>
 
-  <!-- Chiba orange livery stripe -->
-  <rect x="32" y="115" width="458" height="3" fill="#F5A623"/>
+  <!-- ===== Doors (dark vertical panels with window slit) ===== -->
+  <g>
+    <rect x="230" y="66" width="30" height="150" fill="#0B3E60" stroke="#0A1A2E" stroke-width="2.5"/>
+    <rect x="234" y="84" width="22" height="34" fill="#D5ECF6" stroke="#0A1A2E" stroke-width="1.5"/>
+    <line x1="245" y1="140" x2="245" y2="210" stroke="#062B47" stroke-width="1.5"/>
 
-  <!-- Nose windshield -->
-  <path d="M 448 72 Q 480 72 486 100 L 486 116 L 448 116 Z" fill="url(#fvMonoWindow)"/>
-  <path d="M 448 116 L 486 116 L 486 128 Q 480 152 448 152 Z" fill="url(#fvMonoWindow)"/>
-  <rect x="446" y="114" width="42" height="4" fill="#004A7A"/>
+    <rect x="494" y="66" width="30" height="150" fill="#0B3E60" stroke="#0A1A2E" stroke-width="2.5"/>
+    <rect x="498" y="84" width="22" height="34" fill="#D5ECF6" stroke="#0A1A2E" stroke-width="1.5"/>
+    <line x1="509" y1="140" x2="509" y2="210" stroke="#062B47" stroke-width="1.5"/>
+  </g>
 
-  <!-- Headlight -->
-  <circle cx="480" cy="138" r="5" fill="#FFF3B0"/>
-  <circle cx="480" cy="138" r="2.5" fill="#FFD34A"/>
+  <!-- Number/sign plate under first door -->
+  <rect x="316" y="160" width="70" height="18" rx="3" fill="#FFFFFF" stroke="#0A1A2E" stroke-width="2"/>
+  <text x="351" y="174" font-family="'Zen Maru Gothic','Hiragino Maru Gothic ProN',sans-serif" font-size="12" font-weight="900" fill="#0F6FA8" text-anchor="middle">1801</text>
 
-  <!-- Bottom shadow line under car -->
-  <path d="M 38 162 Q 260 172 480 158" fill="none" stroke="#003C60" stroke-width="2" opacity="0.35"/>
+  <!-- ===== Headlight near nose bottom ===== -->
+  <circle cx="58" cy="182" r="11" fill="#FFF3B0" stroke="#0A1A2E" stroke-width="2.5"/>
+  <circle cx="58" cy="182" r="5" fill="#FFD34A"/>
+  <circle cx="55.5" cy="180" r="1.6" fill="#FFFFFF"/>
+
+  <!-- ===== Bottom edge accent lines ===== -->
+  <line x1="94" y1="220" x2="760" y2="220" stroke="#0A1A2E" stroke-width="4"/>
+  <line x1="30" y1="170" x2="92" y2="170" stroke="#0A1A2E" stroke-width="2" opacity="0.5"/>
+
+  <!-- Small nose bumper highlight -->
+  <path d="M 34 148 Q 30 190 92 208" stroke="#0A1A2E" stroke-width="2.5" fill="none"/>
 </svg>

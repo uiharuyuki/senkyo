@@ -1670,9 +1670,7 @@ body[data-page="shops"] .page-hero--home {
   overflow: hidden;
   padding: 0;
   min-height: 640px;
-  background:
-    radial-gradient(circle at 12% 18%, rgba(255, 255, 255, .45) 0 4px, transparent 5px) 0 0 / 42px 42px,
-    linear-gradient(180deg, #FFD98A 0%, #FFC24A 45%, #F5A623 100%);
+  background: linear-gradient(180deg, #FFD98A 0%, #FFC24A 45%, #F5A623 100%);
 }
 
 .page-hero--home::before {
@@ -1713,18 +1711,17 @@ body[data-page="shops"] .page-hero--home .page-hero__inner {
   content: none;
 }
 
-/* Monorail — diagonal at upper area */
+/* Monorail — 3/4 perspective PNG (rotation & pop-comic style baked in) */
 .page-hero__monorail {
   position: absolute;
-  top: 30px;
-  left: -6%;
-  width: min(92%, 640px);
+  top: 0;
+  right: 0;
+  left: auto;
+  width: 100%;
   height: auto;
-  transform: rotate(-8deg);
-  transform-origin: 0 50%;
   z-index: 3;
   pointer-events: none;
-  filter: drop-shadow(0 12px 18px rgba(0, 0, 0, .12));
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, .18));
 }
 
 /* Clouds scattered */
@@ -1761,24 +1758,21 @@ body[data-page="shops"] .page-hero--home .page-hero__inner {
 }
 
 .page-hero__tag--cert {
-  top: 0;
-  right: 10%;
-  height: 210px;
+  top: 30px;
+  right: 4%;
+  height: 180px;
   width: auto;
 }
 
 .page-hero__tag--phone {
-  top: 110px;
-  left: 6%;
-  height: 130px;
-  width: auto;
-  transform: rotate(-10deg);
+  display: none;
 }
 
 .page-hero__tag--coupon {
-  top: 290px;
-  left: 3%;
-  width: 170px;
+  top: auto;
+  bottom: 130px;
+  left: 4%;
+  width: 150px;
   height: auto;
   transform: rotate(-14deg);
 }
@@ -1797,40 +1791,33 @@ body[data-page="shops"] .page-hero--home .page-hero__inner {
 
 @media (max-width: 640px) {
   body[data-page="shops"] .page-hero--home {
-    min-height: 520px;
+    min-height: 580px;
   }
   body[data-page="shops"] .page-hero--home .page-hero__inner {
-    padding: 170px 16px 80px;
+    padding: 220px 16px 90px;
   }
   .page-hero__monorail {
-    width: 110%;
-    left: -10%;
-    top: 24px;
-    transform: rotate(-9deg);
+    width: 100%;
+    right: 0;
+    left: auto;
+    top: 0;
   }
   .page-hero__tag--cert {
+    top: 250px;
     right: 3%;
-    height: 150px;
+    height: 100px;
   }
   .page-hero__tag--phone {
-    top: 80px;
-    left: 3%;
-    height: 90px;
+    display: none;
   }
   .page-hero__tag--coupon {
-    top: 230px;
-    left: 3%;
-    width: 110px;
+    top: auto;
+    bottom: 100px;
+    left: 4%;
+    width: 100px;
   }
-  .page-hero__cloud--a {
-    width: 110px;
-    top: 60px;
-    right: 3%;
-  }
-  .page-hero__cloud--b {
-    width: 90px;
-    top: 200px;
-  }
+  .page-hero__cloud--a,
+  .page-hero__cloud--b,
   .page-hero__cloud--c {
     display: none;
   }
@@ -1844,32 +1831,23 @@ body[data-page="shops"] .page-hero--home .page-hero__inner {
     padding: 260px 20px 130px;
   }
   .page-hero__monorail {
-    width: min(60%, 720px);
-    top: 60px;
+    width: 100%;
+    right: 0;
+    left: auto;
+    top: 20px;
   }
   .page-hero__tag--cert {
-    right: 12%;
-    height: 240px;
-  }
-  .page-hero__tag--phone {
-    top: 130px;
-    left: 12%;
-    height: 150px;
+    top: 40px;
+    right: 4%;
+    height: 220px;
   }
   .page-hero__tag--coupon {
-    top: 320px;
-    left: 8%;
-    width: 200px;
+    display: none;
   }
-  .page-hero__cloud--a {
-    top: 120px;
-    right: 12%;
-    width: 220px;
-  }
-  .page-hero__cloud--b {
-    top: 300px;
-    left: 10%;
-    width: 160px;
+  .page-hero__cloud--a,
+  .page-hero__cloud--b,
+  .page-hero__cloud--c {
+    display: none;
   }
 }
 
@@ -2141,10 +2119,10 @@ body[data-page="shops"] .page-hero--home .page-hero__inner {
    ============================================================ */
 
 .page-hero__monorail {
-  width: min(105%, 700px);
-  top: 18px;
-  left: -8%;
-  transform: rotate(-11deg);
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: auto;
 }
 
 .page-hero--home::before {
@@ -2173,9 +2151,10 @@ body[data-page="shops"] .page-hero--home::after {
 
 @media (min-width: 1000px) {
   .page-hero__monorail {
-    width: min(66%, 780px);
-    top: 40px;
-    transform: rotate(-10deg);
+    width: 100%;
+    top: 20px;
+    right: 0;
+    left: auto;
   }
   .page-hero--home::before {
     font-size: clamp(96px, 12vw, 176px);
@@ -2184,10 +2163,10 @@ body[data-page="shops"] .page-hero--home::after {
 
 @media (max-width: 640px) {
   .page-hero__monorail {
-    width: 118%;
-    left: -10%;
-    top: 18px;
-    transform: rotate(-12deg);
+    width: 100%;
+    right: 0;
+    left: auto;
+    top: 0;
   }
   .page-hero--home::before {
     font-size: clamp(64px, 16vw, 108px);
