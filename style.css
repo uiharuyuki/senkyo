@@ -1765,7 +1765,12 @@ body[data-page="shops"] .page-hero--home .page-hero__inner {
 }
 
 .page-hero__tag--phone {
-  display: none;
+  top: auto;
+  bottom: 230px;
+  left: 4%;
+  height: 130px;
+  width: auto;
+  transform: rotate(-8deg);
 }
 
 .page-hero__tag--coupon {
@@ -1808,11 +1813,14 @@ body[data-page="shops"] .page-hero--home .page-hero__inner {
     height: 100px;
   }
   .page-hero__tag--phone {
-    display: none;
+    top: auto;
+    bottom: 170px;
+    left: 3%;
+    height: 75px;
   }
   .page-hero__tag--coupon {
     top: auto;
-    bottom: 100px;
+    bottom: 90px;
     left: 4%;
     width: 100px;
   }
@@ -1841,8 +1849,17 @@ body[data-page="shops"] .page-hero--home .page-hero__inner {
     right: 4%;
     height: 220px;
   }
+  .page-hero__tag--phone {
+    top: auto;
+    bottom: 340px;
+    left: 6%;
+    height: 160px;
+  }
   .page-hero__tag--coupon {
-    display: none;
+    top: auto;
+    bottom: 240px;
+    left: 6%;
+    width: 200px;
   }
   .page-hero__cloud--a,
   .page-hero__cloud--b,
