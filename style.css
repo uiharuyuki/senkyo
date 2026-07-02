@@ -1796,10 +1796,12 @@ body[data-page="shops"] .page-hero--home .page-hero__inner {
 
 @media (max-width: 640px) {
   body[data-page="shops"] .page-hero--home {
-    min-height: 580px;
+    min-height: 720px;
+    min-height: calc(100vh - 62px);
+    min-height: calc(100dvh - 62px);
   }
   body[data-page="shops"] .page-hero--home .page-hero__inner {
-    padding: 220px 16px 90px;
+    padding: 240px 16px 110px;
   }
   .page-hero__monorail {
     width: 100%;
